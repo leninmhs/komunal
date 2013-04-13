@@ -1,0 +1,440 @@
+
+----------tabla de salud_bienestar-----------------
+
+CREATE TABLE "salud_bienestar" (
+"id_salud" INTEGER PRIMARY KEY  AUTOINCREMENT UNIQUE  NOT NULL,
+"id_familia" integer NOT NULL , 
+vacuna char not null, /* utiliza S para si y N para no, si es S recorre la tabla vacunas*/
+"all_vacuna_nino" boolean  NOT NULL , /* utiliza TRUE si todos los ninos estan vacunados y FALSE sino*/
+"menores_seis_ano" boolean  NOT NULL , /* utiliza TRUE y FALSE*/
+"problemas_enfermedad" char NOT NULL , /* utiliza S si Y N no... si es S relaciona con la tabla enfermedad*/ 
+"atencion_quirurgica" char NOT NULL ,  
+"cant_quirurgico" varchar,  
+"tipo_operacion" varchar,
+discapacitado char not null,
+cant_discapacitados integer,
+
+FOREIGN KEY (id_familia)
+    REFERENCES familia(id)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION
+
+)
+
+
+-----------tabla tipo_vacuna
+create table tipos_vacuna (
+id_tipo_vacuna INTEGER PRIMARY KEY  AUTOINCREMENT UNIQUE  NOT NULL,
+desc_vacuna varchar not null,
+activa char not null
+)
+----------------tabla tipo_enfermedad
+create table tipo_enfermedad (
+id_tipo_enfermedad INTEGER PRIMARY KEY  AUTOINCREMENT UNIQUE  NOT NULL,
+desc_enfermedad varchar not null,
+activa char not null
+)
+
+----------------------------tabla vacunado
+create table vacuna (
+id_vacuna INTEGER PRIMARY KEY  AUTOINCREMENT UNIQUE  NOT NULL,
+id_tipo_vacuna integer not null,
+id_salud integer not null,
+vigente char not null,
+
+ FOREIGN KEY (id_tipo_vacuna)
+    REFERENCES tipo_vacuna(id_tipo_vacuna)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+
+  FOREIGN KEY (id_salud)
+    REFERENCES salud_bienestar(id_salud)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION
+
+)
+
+
+----------------------------tabla enfermedad
+create table enfermedad (
+id_enfermedad INTEGER PRIMARY KEY  AUTOINCREMENT UNIQUE  NOT NULL,
+id_tipo_enfermedad integer not null,
+id_salud integer not null,
+vigente char not null,
+
+ FOREIGN KEY (id_tipo_enfermedad)
+    REFERENCES tipo_enfermedad(id_tipo_enfermedad)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+
+  FOREIGN KEY (id_salud)
+    REFERENCES salud_bienestar(id_salud)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION
+
+)
+
+
+
+
+-- tabla de usuario
+
+CREATE TABLE "usuario" (
+"id_usuario" INTEGER PRIMARY KEY  AUTOINCREMENT UNIQUE  NOT NULL,
+"usuario" VARCHAR NOT NULL , 
+"passwd" VARCHAR NOT NULL , 
+"nombre_completo" TEXT NOT NULL ,
+"cedula" VARCHAR NOT NULL , 
+"correo" VARCHAR NOT NULL ,  
+"id_perfil" VARCHAR NOT NULL , 
+"fecha_creado" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP, 
+"activo" CHAR NOT NULL 
+)
+------------------tabla consejo comunal-----------------------------------
+
+
+drop table "consejo_comunal"; 
+CREATE TABLE "consejo_comunal" (
+"id_consejo" INTEGER PRIMARY KEY  AUTOINCREMENT UNIQUE  NOT NULL,
+"tipo_consejo" INTEGER NOT NULL, 
+"nombre_consejo" VARCHAR NOT NULL , 
+"estado" VARCHAR NOT NULL , 
+"municipio" VARCHAR NOT NULL , 
+"parroquia" VARCHAR NOT NULL ,
+"sector" VARCHAR NOT NULL ,
+"direccion_consejo" TEXT NOT NULL , 
+"vocero_nombre" varchar not null,
+"vocero_apellido" varchar not null,
+"vocero_cedula" varchar not null,
+"vocero_tlf" VARCHAR NOT NULL ,
+"vocero_tlf2" VARCHAR,
+"vocero_correo" VARCHAR, 
+"vocero_direccion" VARCHAR,
+"activo" CHAR NOT NULL,
+"fecha_creacion" DATETIME NOT NULL  DEFAULT CURRENT_TIMESTAMP,
+"id_usuario" INTEGER NOT NULL 
+)
+----------------la tabla anterior
+CREATE TABLE "consejo_comunal" (
+"id_consejo" INTEGER PRIMARY KEY  AUTOINCREMENT UNIQUE  NOT NULL,
+"cedula" VARCHAR NOT NULL , 
+"usuario" VARCHAR NOT NULL , 
+"passwd" VARCHAR NOT NULL , 
+"status" CHAR NOT NULL,
+"nombre" VARCHAR NOT NULL , 
+"apellido" VARCHAR NOT NULL , 
+"nombre_consejo" VARCHAR NOT NULL , 
+"estado" VARCHAR NOT NULL , 
+"municipio" VARCHAR NOT NULL , 
+"parroquia" VARCHAR NOT NULL ,
+"sector" VARCHAR NOT NULL ,
+"direccion_consejo" TEXT NOT NULL , 
+"tlf" VARCHAR NOT NULL , 
+"tlf2" VARCHAR,
+"correo" VARCHAR, 
+"direccion" TEXT NOT NULL , 
+"creado_en" DATETIME NOT NULL  DEFAULT CURRENT_TIMESTAMP
+)
+---------------------------------tabla familia----------------------------
+drop table familia;
+CREATE TABLE familia (
+  id                integer PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE,
+  co_consejo        integer NOT NULL,
+  nombre            varchar NOT NULL,
+  apellido          varchar NOT NULL,
+  cedula            varchar NOT NULL,
+  fecha_nacimiento  datetime not null,
+  sexo              char NOT NULL,
+  parentezco        varchar NOT NULL,
+  ocupacion         text not null,
+  ingreso           text not null,
+  instruccion       text,
+  edo_civil         text not null,
+  nacionalidad      text not null,
+  tlf_local         varchar,
+  tlf_celular       varchar,
+  jefe_familia      char not null,
+  id_grupo          integer not null, /*para especificar el grupo familiar del jefe de familia*/
+  fecha_creado      datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  id_usuario        integer NOT NULL,
+  /* Foreign keys */
+  FOREIGN KEY (co_consejo)
+    REFERENCES consejo_comunal(id_consejo)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+
+  FOREIGN KEY (id_usuario)
+    REFERENCES usuario(id_usuario)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION
+)
+
+----------------------------la tabla anterios-----------------------------
+
+CREATE TABLE familia (
+  id                integer PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE,
+  co_consejo        integer NOT NULL,
+  nombre            varchar NOT NULL,
+  apellido          varchar NOT NULL,
+  cedula            varchar NOT NULL,
+  fecha_nacimiento  datetime,
+  sexo              char NOT NULL,
+  parentezco        varchar NOT NULL,
+  edad              varchar,
+  ocupacion         text,
+  ingreso           text,
+  instruccion       text,
+  edo_civil         text,
+  nacionalidad      text,
+  jefe_familia      text,
+  creado_en         datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  creado_por        varchar NOT NULL,
+  /* Foreign keys */
+  FOREIGN KEY (co_consejo)
+    REFERENCES consejo_comunal(id_consejo)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION
+)
+---------------------------------------tabla vivienda------------------------------
+drop table vivienda;
+CREATE TABLE vivienda (
+  id_vivienda       integer PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE,
+  id_grupo          integer NOT NULL,
+  tipo_vivienda     varchar NOT NULL,
+  estado_vivienda   varchar NOT NULL,
+  tenencia          varchar,
+  material_piso     varchar,
+  material_pared    varchar,
+  material_techo    varchar,
+  habitacion        integer,
+  sala_comedor      integer,
+  banos             integer,
+  cocina            integer,
+  uso_vivienda      text,
+  mejorar_vivienda  text,
+  fecha_creado      datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  id_usuario        integer NOT NULL,
+  /* Foreign keys */
+  FOREIGN KEY (id_grupo)
+    REFERENCES familia(id_grupo)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+
+  FOREIGN KEY (id_usuario)
+    REFERENCES usuario(id_usuario)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION
+)
+
+-------------------------------la tabla anterior--------------------
+
+CREATE TABLE vivienda (
+  id_vivienda       integer PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE,
+  familia           int,
+  tipo_vivienda     text,
+  estado_vivienda   text,
+  tenencia          text,
+  material_piso     text,
+  material_pared    text,
+  material_techo    text,
+  habitacion        integer,
+  sala_comedor      integer,
+  banos             integer,
+  cocina            integer,
+  uso_vivienda      text,
+  mejorar_vivienda  text
+)
+
+
+---------------------------------------------------------------------------------------
+                                 DATA DE LAS TABLAS
+--------------------------------------------------------------------------------------
+
+INSERT INTO "main"."consejo_comunal" ("id_usuario","nombre_consejo","estado","municipio","parroquia","sector","direccion_consejo","tlf","vocero_nombre","vocero_apellido","vocero_cedula","activo") VALUES (?1,?2,?3,?4,?5,?6,?7,?8,?9,?10,?11,?12)
+Parameters:
+param 1 (integer): 1
+param 2 (text): los poderosos|
+param 3 (text): distrito capital
+param 4 (text): libertador
+param 5 (text): santa rosalia
+param 6 (text): puente hierro
+param 7 (text): al lado de la planta
+param 8 (text): 0212-456-7890
+param 9 (text): jose
+param 10 (text): torre
+param 11 (integer): 12987654
+param 12 (text): S
+
+
+INSERT INTO "main"."familia" ("co_consejo","nombre","apellido","cedula","fecha_nacimiento","sexo","parentezco","ocupacion","ingreso","edo_civil","nacionalidad","jefe_familia","id_grupo","id_usuario") VALUES (?1,?2,?3,?4,?5,?6,?7,?8,?9,?10,?11,?12,?13,?14)
+Parameters:
+param 1 (integer): 1
+param 2 (text): lorendy
+param 3 (text): martinez
+param 4 (integer): 16412472
+param 5 (text): 13-05-85
+param 6 (text): F
+param 7 (text): novia
+param 8 (text): ing
+param 9 (integer): 5000
+param 10 (text): noviazgo
+param 11 (text): V
+param 12 (text): S
+param 13 (integer): 1
+param 14 (integer): 1
+
+
+INSERT INTO "main"."familia" ("co_consejo","nombre","apellido","cedula","fecha_nacimiento","sexo","parentezco","ocupacion","ingreso","edo_civil","nacionalidad","jefe_familia","id_grupo","id_usuario") VALUES (?1,?2,?3,?4,?5,?6,?7,?8,?9,?10,?11,?12,?13,?14)
+Parameters:
+param 1 (integer): 1
+param 2 (text): lenin
+param 3 (text): hernandez
+param 4 (integer): 16345673
+param 5 (text): 29-05-1983
+param 6 (text): M
+param 7 (text): novio
+param 8 (text): ing
+param 9 (integer): 5000
+param 10 (text): noviazgo
+param 11 (text): V
+param 12 (text): N
+param 13 (integer): 1
+param 14 (integer): 1
+
+
+INSERT INTO "main"."familia" ("co_consejo","nombre","apellido","cedula","fecha_nacimiento","sexo","parentezco","ocupacion","ingreso","edo_civil","nacionalidad","jefe_familia","id_grupo","id_usuario") VALUES (?1,?2,?3,?4,?5,?6,?7,?8,?9,?10,?11,?12,?13,?14)
+Parameters:
+param 1 (integer): 1
+param 2 (text): priscila
+param 3 (text): celis
+param 4 (integer): 6890345
+param 5 (text): 29-05-1960
+param 6 (text): F
+param 7 (text): esposa
+param 8 (text): ing
+param 9 (integer): 5000
+param 10 (text): casada
+param 11 (text): V
+param 12 (text): S
+param 13 (integer): 3
+param 14 (integer): 1
+
+
+INSERT INTO "main"."familia" ("co_consejo","nombre","apellido","cedula","fecha_nacimiento","sexo","parentezco","ocupacion","ingreso","edo_civil","nacionalidad","jefe_familia","id_grupo","id_usuario") VALUES (?1,?2,?3,?4,?5,?6,?7,?8,?9,?10,?11,?12,?13,?14)
+Parameters:
+param 1 (integer): 1
+param 2 (text): andres
+param 3 (text): martinez
+param 4 (integer): 5987654
+param 5 (text): 29-05-1958
+param 6 (text): M
+param 7 (text): esposo
+param 8 (text): ing
+param 9 (integer): 5000
+param 10 (text): casado
+param 11 (text): V
+param 12 (text): N
+param 13 (integer): 3
+param 14 (integer): 1
+
+
+INSERT INTO "main"."familia" ("co_consejo","nombre","apellido","cedula","fecha_nacimiento","sexo","parentezco","ocupacion","ingreso","edo_civil","nacionalidad","jefe_familia","id_grupo","id_usuario") VALUES (?1,?2,?3,?4,?5,?6,?7,?8,?9,?10,?11,?12,?13,?14)
+Parameters:
+param 1 (integer): 1
+param 2 (text): lorendy
+param 3 (text): martinez
+param 4 (integer): 16412472
+param 5 (text): 29-05-1985
+param 6 (text): M
+param 7 (text): hija
+param 8 (text): ing
+param 9 (integer): 5000
+param 10 (text): soltera
+param 11 (text): V
+param 12 (text): N
+param 13 (integer): 3
+param 14 (integer): 1
+
+
+
+INSERT INTO "main"."vivienda" ("id_grupo","tipo_vivienda","estado_vivienda","tenencia","material_piso","material_pared","material_techo","habitacion","sala_comedor","banos","cocina","uso_vivienda","mejorar_vivienda") VALUES (?1,?2,?3,?4,?5,?6,?7,?8,?9,?10,?11,?12,?13)
+Parameters:
+param 1 (integer): 1
+param 2 (text): q
+param 3 (text): q
+param 4 (text): q
+param 5 (text): q
+param 6 (text): q
+param 7 (text): q
+param 8 (integer): 2
+param 9 (integer): 2
+param 10 (integer): 1
+param 11 (integer): 1
+param 12 (text): q
+param 13 (text): q
+
+
+
+-------------------------------------------------------------------------------
+                   CONSULTAS PARA LOS LISTADOS DEL SISTEMA
+-------------------------------------------------------------------------------
+
+------------------------------para la cantidad de viviendas--------------------------------
+
+SELECT count(b.id_vivienda) as cant_viviendas
+FROM familia a, vivienda b
+WHERE a.co_consejo=1
+      and a.jefe_familia='S'
+      and a.id=b.id_grupo
+
+-------------------------------cant. ninos entre 3 y 12 ano  - Listo -------------------------------------------
+SELECT count(a.fecha_nacimiento)
+from familia a
+where fecha_nacimiento between Date('now', '-12 year') and Date('now', '-3 year')
+      AND a.co_consejo=1
+----------------------------------------cant. adolecentes entre 13 y 17 ano-----------------------------     
+
+
+SELECT count(a.fecha_nacimiento)
+from familia a
+where fecha_nacimiento between Date('now', '-17 year') and Date('now', '-13 year')
+      AND a.co_consejo=1
+
+--------------------------------------cant. adultos mayores - Listo
+
+
+SELECT count(a.fecha_nacimiento)
+from familia a
+where fecha_nacimiento < Date('now', '-60 year')
+      AND a.co_consejo=1
+
+-----------------------------cant.personas alfabetizadas - Listo
+
+select count(a.id)
+from familia a
+where a.instruccion='N/P'
+and fecha_nacimiento < Date('now', '-7 year')
+/* se condiciono la consulta para que traiga informacion de aquellas personas mayores de 7 ano queno posee nivel de instruccion (estatus N/P)*/
+
+--------------------------------------cant. personas en la comunidad - Listo-------------------------------
+
+select count(id) as cant_perso,
+(select count(sexo) from familia where sexo='F') as cant_mujer,
+(select count(sexo) from familia where sexo='M') as cant_hombre
+from familia
+where co_consejo=1
+
+--------------------------------------cant. familias -Listo
+
+select count(id)
+from familia
+where jefe_familia='S'
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,39 @@
+CREATE TABLE "consejo_comunal" (
+"id_consejo" INTEGER PRIMARY KEY  AUTOINCREMENT UNIQUE  NOT NULL,
+"cedula" VARCHAR NOT NULL , 
+"usuario" VARCHAR NOT NULL , 
+"passwd" VARCHAR NOT NULL , 
+"status" CHAR NOT NULL,
+"nombre" VARCHAR NOT NULL , 
+"apellido" VARCHAR NOT NULL , 
+"nombre_consejo" VARCHAR NOT NULL , 
+"estado" VARCHAR NOT NULL , 
+"municipio" VARCHAR NOT NULL , 
+"parroquia" VARCHAR NOT NULL ,
+"sector" VARCHAR NOT NULL ,
+"direccion_consejo" TEXT NOT NULL , 
+"tlf" VARCHAR NOT NULL , 
+"tlf2" VARCHAR,
+"correo" VARCHAR, 
+"direccion" TEXT NOT NULL , 
+"creado_en" DATETIME NOT NULL  DEFAULT CURRENT_TIMESTAMP
+)
+
+CREATE TABLE familia 
+(
+id INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE  NOT NULL,
+co_consejo INTEGER NOT NULL, 
+nombre VARCHAR NOT NULL ,
+apellido VARCHAR NOT NULL ,
+cedula VARCHAR NOT NULL ,
+fecha_nacimiento DATETIME,
+sexo CHAR NOT NULL ,
+parentezco VARCHAR NOT NULL ,
+edad VARCHAR,"ocupacion" TEXT,
+ingreso TEXT,"instruccion" TEXT,
+edo_civil TEXT,
+nacionalidad TEXT,
+jefe_familia TEXT,
+creado_en DATETIME DEFAULT (CURRENT_TIMESTAMP)  NOT NULL,
+creado_por VARCHAR  NOT NULL
+)

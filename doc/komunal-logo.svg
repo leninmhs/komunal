@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="231"
+   height="60"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.2 r9819"
+   sodipodi:docname="komunal-logo.svg"
+   inkscape:export-filename="/home/lenin/komunal/all/komunal-logo.png"
+   inkscape:export-xdpi="176"
+   inkscape:export-ydpi="176">
+  <defs
+     id="defs4">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3919">
+      <stop
+         style="stop-color:#008000;stop-opacity:1;"
+         offset="0"
+         id="stop3921" />
+      <stop
+         style="stop-color:#008000;stop-opacity:0;"
+         offset="1"
+         id="stop3923" />
+    </linearGradient>
+    <filter
+       inkscape:collect="always"
+       id="filter3802"
+       x="-0.21610574"
+       width="1.4322115"
+       y="-0.15322547"
+       height="1.3064508"
+       color-interpolation-filters="sRGB">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="3.2070091"
+         id="feGaussianBlur3804" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       id="filter3810"
+       color-interpolation-filters="sRGB">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="0.49338602"
+         id="feGaussianBlur3812" />
+    </filter>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3919"
+       id="linearGradient3925"
+       x1="179.80716"
+       y1="1042.7657"
+       x2="282.33765"
+       y2="1048.3215"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-107.14596,23.162954)" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="1"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.979899"
+     inkscape:cx="186.7792"
+     inkscape:cy="40.535694"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1181"
+     inkscape:window-height="703"
+     inkscape:window-x="119"
+     inkscape:window-y="114"
+     inkscape:window-maximized="0"
+     inkscape:object-paths="true" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-992.3622)">
+    <text
+       xml:space="preserve"
+       style="font-size:48px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:'TiÃ«sto Font';-inkscape-font-specification:'TiÃ«sto Font Bold'"
+       x="44.951786"
+       y="1044.786"
+       id="text3814"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/lenin/komunal/all/komunal-logo.png"
+       inkscape:export-xdpi="176"
+       inkscape:export-ydpi="176"><tspan
+         sodipodi:role="line"
+         id="tspan3816"
+         x="44.951786"
+         y="1044.786"
+         style="font-size:64px;font-weight:bold;fill:#000000;-inkscape-font-specification:'TiÃ«sto Font Bold'">Omunal</tspan></text>
+    <g
+       id="g3818"
+       transform="translate(3.0304576,1.0101525)"
+       inkscape:export-filename="/home/lenin/komunal/all/komunal-logo.png"
+       inkscape:export-xdpi="176"
+       inkscape:export-ydpi="176">
+      <text
+         transform="matrix(0.90652124,0.12221009,-0.14605921,1.0834276,96.027141,1.8441756)"
+         sodipodi:linespacing="125%"
+         id="text2985"
+         y="953.99725"
+         x="65.558159"
+         style="font-size:56px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;opacity:0.91221373;fill:#508300;fill-opacity:1;stroke:none;filter:url(#filter3802);font-family:Purisa;-inkscape-font-specification:Purisa"
+         xml:space="preserve"><tspan
+           y="953.99725"
+           x="65.558159"
+           id="tspan2987"
+           sodipodi:role="line">K</tspan></text>
+      <text
+         transform="matrix(0.90652124,0.12221009,-0.14605921,1.0834276,96.75277,0.07261114)"
+         sodipodi:linespacing="125%"
+         id="text2985-7"
+         y="954.93237"
+         x="66.930695"
+         style="font-size:56px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#008000;fill-opacity:1;stroke:none;filter:url(#filter3810);font-family:Purisa;-inkscape-font-specification:Purisa"
+         xml:space="preserve"><tspan
+           y="954.93237"
+           x="66.930695"
+           id="tspan2987-1"
+           sodipodi:role="line">K</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:url(#linearGradient3925);fill-opacity:1;stroke:none;font-family:Ubuntu;-inkscape-font-specification:Ubuntu"
+       x="75.1866"
+       y="1075.02"
+       id="text3915"
+       sodipodi:linespacing="125%"
+       transform="matrix(0.9766143,-0.21499886,0.21499886,0.9766143,0,0)"><tspan
+         sodipodi:role="line"
+         id="tspan3917"
+         x="75.1866"
+         y="1075.02"
+         style="fill:url(#linearGradient3925);fill-opacity:1">Beta</tspan></text>
+  </g>
+</svg>

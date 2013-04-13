@@ -1,0 +1,469 @@
+El usuario lenininicio session en KomunalEl usuario lenininicio session en Komunal
+ El usuario lenininicio session en Komunal
+El usuario lenininicio session en Komunal
+El usuario lenininicio session en Komunal
+El usuario lenininicio session en Komunal
+ log en funciones inicio session en Komunal
+log en funciones inicio session en Komunal
+2012-06-08 17:02 log en funciones inicio session en Komunal
+2012-06-08 17:04:1339191285 log en funciones inicio session en Komunal
+2012-06-08 17:05:33 log en funciones inicio session en Komunal
+[2012-06-08 17:07:08] log en funciones inicio session en Komunal -- Hola
+[2012-06-08 17:14:29] log en funciones inicio session en Komunal -- Hola
+[2012-06-08 17:15:11] log en funciones inicio session en Komunal -- Hola
+[2012-06-08 17:15:22] log en funciones inicio session en Komunallenin -- Hola
+El usuario lenininicio session en Komunal
+[2012-06-08 17:18:21] log en funciones inicio session en Komunal -- Hola
+[2012-06-08 17:18:31] log en funciones inicio session en Komunalleninmhs -- usuario leninmhsinicio session
+[2012-06-08 17:19:07]Hola
+[2012-06-08 17:19:15]Login Datos incorrectos = SELECT id_usuario,co_consejo FROM usuario where usuario= 'lenin' AND passwd = '58f2469b804c04835a9fa05a16b7c5c8'
+[2012-06-08 17:19:24]usuario lenininicio session
+[2012-06-08 17:24:01]Hola
+[2012-06-08 17:24:08]Login Datos incorrectos = SELECT id_usuario,co_consejo FROM usuario where usuario= 'lenin' AND passwd = '58f2469b804c04835a9fa05a16b7c5c8'
+[2012-06-08 21:48:34]Hola
+[2012-06-08 21:48:45]Login Datos incorrectos = SELECT id_usuario,co_consejo FROM usuario where usuario= 'lenin' AND passwd = 'd7d3aade30e2d5823357c80e66f6cf4a'
+[2012-06-08 21:49:15]Login Datos incorrectos = SELECT id_usuario,co_consejo FROM usuario where usuario= 'dasasda' AND passwd = '49aebc3b486a8f6e4d2ed23b4e98507c'
+[2012-06-08 22:11:06]Hola
+[2012-06-08 22:11:18]Inicio session usuario lenin
+[2012-06-08 22:14:16]Hola
+[2012-06-08 22:14:25]Inicio session usuario lenin
+[2012-06-08 22:16:12]Hola
+[2012-06-08 22:16:20]Inicio session usuario lenin
+[2012-06-08 22:19:15]Hola
+[2012-06-08 22:19:23]Inicio session usuario lenin
+[2012-06-08 22:21:14]Hola
+[2012-06-08 22:21:23]Inicio session usuario lenin
+[2012-06-08 22:22:48]Hola
+[2012-06-08 22:22:57]Inicio session usuario lenin
+[2012-06-08 22:23:47]Hola
+[2012-06-08 22:23:58]Inicio session usuario lenin
+[2012-06-08 22:24:41]Hola
+[2012-06-08 22:24:53]Inicio session usuario lenin
+[2012-06-09 01:55:55]Hola
+[2012-06-09 01:56:03]Inicio session usuario lenin
+[2012-06-09 02:06:10]Hola
+[2012-06-09 02:06:19]Inicio session usuario lenin
+[2012-06-09 02:06:49]Error modificando jefe de familia = UPDATE familia set nombre='Veronica', apellido='De la Rosa', sexo='F', fecha_nacimiento='2000-01-01', ocupacion='estudiante', edo_civil='Viudo', nacionalidad='E', ingreso='9500,'aqui otro monto',', instruccion='Bachiller'  WHERE cedula=12025458ERROR:root:Inicio session usuario lenin
+ERROR:root:Error modificando jefe de familia = UPDATE familia set nombre='Veronica', apellido='De la Rosa', sexo='F', fecha_nacimiento='2000-01-01', ocupacion='estudiante', edo_civil='Viudo', nacionalidad='E', ingreso='9500,'lololo'', instruccion='Bachiller'  WHERE cedula=12025458
+ERROR:root:
+[2012-06-09 23:14:26]Inicio session usuario lenin - Error Clase ->None - Error Descripcion ->None - Error Traza ->[]
+ERROR:root:
+[2012-06-09 23:14:55]Error modificando jefe de familia = UPDATE familia set nombre='eylin ', apellido='regalado', sexo='F', fecha_nacimiento='2000-01-01', ocupacion='administradora,'dasdasda'', edo_civil='Viudo', nacionalidad='V', ingreso='3555', instruccion='Bachiller'  WHERE cedula=14569854 - Error Clase -><class 'sqlite3.OperationalError'> - Error Descripcion ->near "dasdasda": syntax error - Error Traza ->[('inicial.py', 451, 'modificarJefeFamilia', 'self.dbconn.execute(str(sql))')]
+ERROR:root:
+[2012-06-09 23:19:34]Inicio session usuario lenin - Error Clase ->None - Error Descripcion ->None - Error Traza ->[]
+ERROR:root:
+[2012-06-09 23:19:57]Error modificando jefe de familia = UPDATE familia set nombre='rocio', apellido='durcal', sexo='F', fecha_nacimiento='2000-01-01', ocupacion='cantante,'leninmhs','aqui mismo'', edo_civil='Viudo', nacionalidad='E', ingreso='9600', instruccion='Bachiller'  WHERE cedula=12365874 - Error Clase -><class 'sqlite3.OperationalError'> - Error Descripcion ->near "leninmhs": syntax error - Error Traza ->[('inicial.py', 451, 'modificarJefeFamilia', 'self.dbconn.execute(str(sql))')]
+ERROR:root:
+[2012-06-09 23:20:34]Inicio session usuario lenin - Error Clase ->None - Error Descripcion ->None - Error Traza ->[]
+ERROR:root:
+[2012-06-09 23:21:46]Inicio session usuario lenin
+ERROR:root:
+[2012-06-09 23:22:08]Error modificando jefe de familia = UPDATE familia set nombre='eylin ', apellido='regalado', sexo='F', fecha_nacimiento='2000-01-01', ocupacion='administradora,'INFORMATICO'', edo_civil='Viudo', nacionalidad='V', ingreso='3555', instruccion='Bachiller'  WHERE cedula=14569854 - Error Clase -><class 'sqlite3.OperationalError'> - Error Descripcion ->near "INFORMATICO": syntax error - Error Traza ->[('inicial.py', 451, 'modificarJefeFamilia', 'self.dbconn.execute(str(sql))')]
+ERROR:root:
+[2012-06-09 23:34:35]Inicio session usuario lenin
+SQLite cargado
+1
+ERROR:root:
+[2012-06-09 23:35:57]Error modificando jefe de familia = UPDATE familia set nombre='eylin ', apellido='regalado', sexo='F', fecha_nacimiento='2000-01-01', ocupacion='administradora,'asdasdasdasdasdas'', edo_civil='Viudo', nacionalidad='V', ingreso='3555', instruccion='Bachiller'  WHERE cedula=14569854 - Error Clase -><class 'sqlite3.OperationalError'> - Error Descripcion ->near "asdasdasdasdasdas": syntax error - Error Traza ->[('inicial.py', 451, 'modificarJefeFamilia', 'self.dbconn.execute(str(sql))')]
+CAMPO: 13
+CAMPO: 14569854
+CAMPO: eylin 
+13eylin F
+SELECT * FROM servicios_publicos WHERE familia=13
+SQLite cargado
+SQLite cargado
+SQLite cargado
+SQLite cargado
+SQLite cargado
+SQLite cargado
+SQLite cargado
+SQLite cargado
+SQLite cargado
+ERROR:root:
+[2012-06-10 02:05:45]Inicio session usuario lenin
+ERROR:root:
+[2012-06-10 02:20:07]Login Datos incorrectos = SELECT id_usuario,co_consejo FROM usuario where usuario= 'sswqwed' AND passwd = '88a6e06c488e04222a3159ced60d88be'
+ERROR:root:
+[2012-06-10 02:20:49]Login Datos incorrectos = SELECT id_usuario,co_consejo FROM usuario where usuario= 'sswqwed' AND passwd = '186eecf9e7956760f1fd4d859d5a4696'
+ERROR:root:
+[2012-06-10 02:21:29]Login Datos incorrectos = SELECT id_usuario,co_consejo FROM usuario where usuario= 'ledeed' AND passwd = '9d1b8bf5d4d522fc20efd30ca72c4746'
+ERROR:root:
+[2012-06-10 02:21:48]Login Datos incorrectos = SELECT id_usuario,co_consejo FROM usuario where usuario= 'cdcedc' AND passwd = 'e2f2f931f426682b7c55a46f0e7c06fe'
+ERROR:root:
+[2012-06-10 02:22:26]Login Datos incorrectos = SELECT id_usuario,co_consejo FROM usuario where usuario= 'cwedcecdc' AND passwd = '951d4709395a44df709c96e2eac5cd70'
+ERROR:root:
+[2012-06-10 02:23:00]Inicio session usuario lenin
+ERROR:root:
+[2012-06-10 02:27:02]Inicio session usuario 
+ERROR:root:
+[2012-06-10 02:33:15]Login Datos incorrectos = SELECT id_usuario,co_consejo FROM usuario where usuario= 'wcdcwd' AND passwd = 'f03ddf4cd88c2550c78971d5b95a02e2'
+ERROR:root:
+[2012-06-10 14:02:54]Inicio session usuario lenin
+ERROR:root:
+[2012-06-10 15:11:38]Inicio session usuario lenin
+ERROR:root:
+[2012-06-10 15:23:24]Inicio session usuario lenin
+ERROR:root:
+[2012-06-10 15:25:16]Inicio session usuario lenin
+ERROR:root:
+[2012-06-11 12:03:49]Inicio session usuario lenin
+ERROR:root:
+[2012-06-17 16:03:35]Inicio session usuario lenin
+ERROR:root:
+[2012-06-18 00:39:48]Inicio session usuario lenin
+ERROR:root:
+[2012-06-18 00:40:55]Inicio session usuario lenin
+ERROR:root:
+[2012-06-18 00:45:14]Inicio session usuario lenin
+ERROR:root:
+[2012-06-18 00:45:42]Inicio session usuario lenin
+ERROR:root:
+[2012-06-18 01:22:25]Inicio session usuario lenin
+ERROR:root:
+[2012-06-20 22:21:25]Inicio session usuario lenin
+ERROR:root:
+[2012-06-20 22:23:46]Inicio session usuario lenin
+ERROR:root:
+[2012-06-20 22:25:49]Inicio session usuario lenin
+ERROR:root:
+[2012-06-20 22:31:46]Inicio session usuario lenin
+ERROR:root:
+[2012-06-20 22:34:26]Inicio session usuario lenin
+ERROR:root:
+[2012-06-20 22:43:29]Inicio session usuario lenin
+ERROR:root:
+[2012-06-20 23:17:37]Inicio session usuario lenin
+ERROR:root:
+[2012-06-20 23:20:21]Inicio session usuario lenin
+ERROR:root:
+[2012-06-20 23:21:26]Inicio session usuario lenin
+ERROR:root:
+[2012-06-20 23:27:48]Inicio session usuario lenin
+ERROR:root:
+[2012-06-20 23:31:11]Inicio session usuario lenin
+ERROR:root:
+[2012-06-20 23:31:55]Inicio session usuario lenin
+ERROR:root:
+[2012-06-20 23:45:19]Inicio session usuario lenin
+ERROR:root:
+[2012-06-20 23:46:39]Inicio session usuario lenin
+ERROR:root:
+[2012-06-20 23:59:24]Inicio session usuario lenin
+ERROR:root:
+[2012-06-21 00:10:50]Inicio session usuario lorendy
+ERROR:root:
+[2012-06-21 00:11:34]Inicio session usuario lenin
+ERROR:root:
+[2012-06-21 00:13:11]Inicio session usuario lenin
+ERROR:root:
+[2012-06-21 00:17:32]Inicio session usuario lenin
+ERROR:root:
+[2012-06-21 00:22:25]Inicio session usuario lenin
+ERROR:root:
+[2012-06-21 00:25:36]Inicio session usuario lenin
+ERROR:root:
+[2012-06-21 00:25:55]Error modificando el consejo comunal = UPDATE consejo_comunal set tipo_consejo='Terrazas de la Vega II', nombre_consejo='Terrazas de la Vega II', estado='Distrito Capital', municipio='Libertador', parroquia='El Paraiso', sector='La Vega Etapa IV', direccion_consejo='Terrazas de la vega con cruze a la izquierdabloque IV', vocero_nombre='Eylin', vocero_apellido='Regalado', vocero_cedula='14542653', vocero_tlf='0416-98545896', vocero_tlf2='0412-6589636', vocero_correo='eylindrd@gmail.com', vocero_direccion='Terrazas de la vega con cruze a la izquierdabloque IV', activo='S'  WHERE id_consejo='1' - Error Clase -><type 'exceptions.AttributeError'> - Error Descripcion ->'Ui_MainWindow' object has no attribute 'lblNotificacionBienestar' - Error Traza ->[('/home/lenin/Dropbox/Entregables PST komunal/komunal/concejocomunal.py', 117, 'ModificarConcejoComunal', 'self.ui.lblNotificacionBienestar.setVisible(True)')]
+ERROR:root:
+[2012-06-21 00:38:17]Inicio session usuario lenin
+ERROR:root:
+[2012-06-21 00:39:41]Inicio session usuario lenin
+ERROR:root:
+[2012-06-21 00:43:13]Inicio session usuario lenin
+ERROR:root:
+[2012-06-21 00:43:50]Inicio session usuario lenin
+ERROR:root:
+[2012-06-21 00:44:43]El consejo comunal  = Terrazas de la Vega II fue modificado. UPDATE consejo_comunal set tipo_consejo='Terrazas de la Vega II XXX', nombre_consejo='Terrazas de la Vega II', estado='Distrito Capital', municipio='Libertador', parroquia='El Paraiso', sector='La Vega Etapa IV', direccion_consejo='Terrazas de la vega con cruze a la izquierdabloque IV', vocero_nombre='Eylin', vocero_apellido='Regalado', vocero_cedula='14542653', vocero_tlf='0416-98545896', vocero_tlf2='0412-6589636', vocero_correo='eylindrd@gmail.com', vocero_direccion='Terrazas de la vega con cruze a la izquierdabloque IV', activo='S'  WHERE id_consejo='1'
+ERROR:root:
+[2012-06-21 00:47:49]Inicio session usuario lenin
+ERROR:root:
+[2012-06-21 00:59:08]Inicio session usuario lenin
+ERROR:root:
+[2012-06-21 01:08:17]Inicio session usuario lenin
+ERROR:root:
+[2012-06-21 01:09:00]El consejo comunal Terrazas de la Vega II fue modificado. UPDATE consejo_comunal set tipo_consejo='Terrazas de la Vega II', nombre_consejo='Terrazas de la Vega II', estado='Distrito Capital', municipio='Libertador', parroquia='El Paraiso', sector='La Vega Etapa IV', direccion_consejo='Terrazas de la vega con cruze a la izquierdabloque IV', vocero_nombre='Eylin', vocero_apellido='Regalado', vocero_cedula='14542653', vocero_tlf='0416-98545896', vocero_tlf2='0412-6589636', vocero_correo='eylindrd@gmail.com', vocero_direccion='Terrazas de la vega con cruze a la izquierda bloque IV', activo='S'  WHERE id_consejo='1'
+ERROR:root:
+[2012-06-21 01:28:21]Inicio session usuario lenin
+ERROR:root:
+[2012-06-21 01:31:38]Inicio session usuario lenin
+ERROR:root:
+[2012-06-21 01:36:21]Inicio session usuario lenin
+ERROR:root:
+[2012-06-21 01:37:37]Inicio session usuario lenin
+ERROR:root:
+[2012-06-21 01:39:16]Inicio session usuario lenin
+ERROR:root:
+[2012-06-21 01:40:13]Inicio session usuario lenin
+ERROR:root:
+[2012-06-21 01:42:17]Inicio session usuario lenin
+ERROR:root:
+[2012-06-21 01:44:25]Inicio session usuario lenin
+ERROR:root:
+[2012-06-21 01:45:46]Inicio session usuario lenin
+ERROR:root:
+[2012-06-21 01:47:17]Inicio session usuario lenin
+ERROR:root:
+[2012-06-21 01:50:08]Inicio session usuario lenin
+ERROR:root:
+[2012-06-21 01:53:28]Inicio session usuario lenin
+ERROR:root:
+[2012-06-21 02:01:17]Inicio session usuario lenin
+ERROR:root:
+[2012-06-21 02:05:49]Inicio session usuario lenin
+ERROR:root:
+[2012-06-21 02:07:15]Inicio session usuario lenin
+ERROR:root:
+[2012-06-21 02:08:20]Inicio session usuario lenin
+ERROR:root:
+[2012-06-21 02:10:45]Inicio session usuario lenin
+ERROR:root:
+[2012-06-21 02:13:11]Inicio session usuario lenin
+ERROR:root:
+[2012-06-21 02:14:30]Inicio session usuario lenin
+ERROR:root:
+[2012-06-21 02:16:55]Inicio session usuario lenin
+ERROR:root:
+[2012-06-21 02:19:41]Inicio session usuario lenin
+ERROR:root:
+[2012-06-21 02:19:56]Inicio session usuario lenin
+ERROR:root:
+[2012-06-21 02:22:13]Inicio session usuario lenin
+ERROR:root:
+[2012-06-21 02:23:28]Inicio session usuario lenin
+ERROR:root:
+[2012-06-21 02:25:09]Inicio session usuario lenin
+ERROR:root:
+[2012-06-21 02:26:56]Inicio session usuario lenin
+ERROR:root:
+[2012-06-21 02:29:20]Inicio session usuario lenin
+ERROR:root:
+[2012-06-21 10:11:05]Inicio session usuario lenin
+ERROR:root:
+[2012-06-21 19:15:20]Inicio session usuario lenin
+ERROR:root:
+[2012-06-21 19:18:12]Inicio session usuario lenin
+ERROR:root:
+[2012-06-21 19:20:02]Inicio session usuario lenin
+ERROR:root:
+[2012-06-21 19:32:18]Inicio session usuario lenin
+ERROR:root:
+[2012-06-21 19:32:33]Se genero planilla pdf de familia = <PyQt4.QtGui.QTableWidgetItem object at 0x926838c>el usuario lo guardo en: /home/lhernandez/Escritorio/familia-5412632.pdf
+ERROR:root:
+[2012-06-21 20:09:19]Inicio session usuario lenin
+ERROR:root:
+[2012-06-21 20:09:39]Se genero planilla pdf de familia = 14156321 el usuario lo guardo en: /home/lhernandez/Escritorio/familia-14156321.pdf
+ERROR:root:
+[2012-06-21 20:11:01]Fue registrado 14565434 como jefe de familia. INSERT INTO familia ('co_consejo','nombre', 'apellido', 'cedula', 'fecha_nacimiento', 'sexo',  'parentezco', 'ocupacion', 'edo_civil','nacionalidad','ingreso', 'instruccion','jefe_familia','id_grupo','id_usuario') VALUES( '1','Randall','Narvaez','14565434','1978-01-04','M','jefe_familia','Administrador','Casado','V','6500','Bachiller','S','64',3)
+ERROR:root:
+[2012-06-21 20:12:52]Se registraro el miembro de familia =Yessenia Narvaez
+ERROR:root:
+[2012-06-21 20:13:16]Se registro la vivienda de la familia =14565434
+ERROR:root:
+[2012-06-21 20:13:56]Se registraron los servicios publicos de la familia =14565434
+ERROR:root:
+[2012-06-21 20:14:24]Se elimino la familia cuyo jefe es =wxwswx junto a toda su informacion de vivienda, salud, bienestar, y servicios
+ERROR:root:
+[2012-06-21 20:14:41]Se elimino la familia cuyo jefe es =23232 junto a toda su informacion de vivienda, salud, bienestar, y servicios
+ERROR:root:
+[2012-06-21 20:15:29]Fue modificando el jefe de familia =14377703
+ERROR:root:
+[2012-06-21 20:19:47]Inicio session usuario lenin
+ERROR:root:
+[2012-06-21 20:21:02]Se genero planilla pdf de familia = 16412472 el usuario lo guardo en: /home/lhernandez/Escritorio/familia-16412472.pdf
+ERROR:root:
+[2012-06-21 20:25:11]El consejo comunal Terrazas de la Vega III fue modificado. UPDATE consejo_comunal set tipo_consejo='Terrazas de la Vega II', nombre_consejo='Terrazas de la Vega III', estado='Distrito Capital', municipio='Libertador', parroquia='El Paraiso', sector='La Vega Etapa IV', direccion_consejo='Terrazas de la vega con cruze a la izquierdabloque IV', vocero_nombre='Eylin', vocero_apellido='Regalado', vocero_cedula='14542653', vocero_tlf='0416-98545896', vocero_tlf2='0412-6589636', vocero_correo='eylindrd@gmail.com', vocero_direccion='Terrazas de la vega con cruze a la izquierda bloque IV', activo='S'  WHERE id_consejo='1'
+ERROR:root:
+[2012-06-23 00:21:59]Inicio session usuario lenin
+ERROR:root:
+[2012-06-23 00:26:37]Inicio session usuario lenin
+ERROR:root:
+[2012-06-23 00:30:05]Inicio session usuario lenin
+ERROR:root:
+[2012-06-23 00:34:40]Inicio session usuario lenin
+ERROR:root:
+[2012-06-23 00:42:07]Inicio session usuario lenin
+ERROR:root:
+[2012-06-23 00:49:51]Inicio session usuario lenin
+ERROR:root:
+[2012-06-23 00:52:07]Inicio session usuario lenin
+ERROR:root:
+[2012-06-23 00:52:45]Inicio session usuario lenin
+ERROR:root:
+[2012-06-23 01:39:24]Inicio session usuario lenin
+ERROR:root:
+[2012-06-23 01:41:12]Inicio session usuario lenin
+ERROR:root:
+[2012-06-23 01:41:42]Inicio session usuario lenin
+ERROR:root:
+[2012-06-23 01:43:58]Inicio session usuario lenin
+ERROR:root:
+[2012-06-23 01:47:59]Login Datos incorrectos = SELECT id_usuario,co_consejo FROM usuario where usuario= 'lenin' AND passwd = '99f58cdfbe15417afbda4d5ea9be3fda'
+ERROR:root:
+[2012-06-24 00:42:02]Login Datos incorrectos = SELECT id_usuario,co_consejo FROM usuario where usuario= 'lenin' AND passwd = 'a0d5c8a4d386f15284ec25fe1eeeb426'
+ERROR:root:
+[2012-06-24 00:57:26]Inicio session usuario lenin
+ERROR:root:
+[2012-06-24 01:16:26]Inicio session usuario lenin
+ERROR:root:
+[2012-06-24 01:17:45]Inicio session usuario lenin
+ERROR:root:
+[2012-06-24 01:19:13]Inicio session usuario lenin
+ERROR:root:
+[2012-06-24 01:24:05]Login Datos incorrectos = SELECT id_usuario,co_consejo FROM usuario where usuario= '' AND passwd = 'd41d8cd98f00b204e9800998ecf8427e'
+ERROR:root:
+[2012-06-24 01:24:23]Login Datos incorrectos = SELECT id_usuario,co_consejo FROM usuario where usuario= '' AND passwd = 'd41d8cd98f00b204e9800998ecf8427e'
+ERROR:root:
+[2012-06-24 01:32:17]Inicio session usuario lenin
+ERROR:root:
+[2012-06-24 01:46:26]Se elimino la familia cuyo jefe es =wxwswx junto a toda su informacion de vivienda, salud, bienestar, y servicios
+ERROR:root:
+[2012-06-24 01:46:29]Se elimino la familia cuyo jefe es =23232 junto a toda su informacion de vivienda, salud, bienestar, y servicios
+ERROR:root:
+[2012-06-24 16:52:19]Fue registrado 15765456 como jefe de familia. INSERT INTO familia ('co_consejo','nombre', 'apellido', 'cedula', 'fecha_nacimiento', 'sexo',  'parentezco', 'ocupacion', 'edo_civil','nacionalidad','ingreso', 'instruccion','jefe_familia','id_grupo','id_usuario') VALUES( '1','Ronald','Doubolay','15765456','2000-01-12','M','jefe_familia','Empresario','Soltero','V','7500','Bachiller','S','64',3)
+ERROR:root:
+[2012-06-24 16:55:58]Se registraro el miembro de familia =lenin hernandez
+ERROR:root:
+[2012-06-24 16:55:58]Se registraro el miembro de familia =Lenin Falime Hernandez Lorendy
+ERROR:root:
+[2012-06-24 16:55:58]Se registraro el miembro de familia =lenin hernandez
+ERROR:root:
+[2012-06-24 16:55:58]Se registraro el miembro de familia =camila vallejo
+ERROR:root:
+[2012-06-24 16:55:58]Se registraro el miembro de familia =dorangel vargas
+ERROR:root:
+[2012-07-03 21:47:25]El consejo comunal Las Flores de Puente Hierro  fue registrado exitosamente. INSERT INTO consejo_comunal ('tipo_consejo', 'nombre_consejo'  , 'estado', 'municipio' , 'parroquia'  ,'sector'  ,'direccion_consejo', 'vocero_nombre' ,'vocero_apellido' ,'vocero_cedula' ,'vocero_tlf' ,'vocero_tlf2' ,'vocero_correo' , 'vocero_direccion' ,'activo' ,'id_usuario' ) VALUES ('Urbana','Las Flores de Puente Hierro ','Distrito Capital','Libertador ','Santa Rosalia','Puente Hierro ','Final Avenida paez del paraiso Puente Hierro ','Eylin ','Regalado','13158971','04167062797','02125416137','eylindrd@gmail.com','Final avenida paez del paraiso edificio Torre Artusa Piso 1 apto 1-C Puente hierro ','S','1')
+ERROR:root:
+[2012-07-03 21:49:32]Fue registrado 13158971 como jefe de familia. INSERT INTO familia ('co_consejo','nombre', 'apellido', 'cedula', 'fecha_nacimiento', 'sexo',  'parentezco', 'ocupacion', 'edo_civil','nacionalidad','ingreso', 'instruccion','jefe_familia','id_grupo','id_usuario') VALUES( '15','Eylin','Regalado','13158971','1977-07-20','F','jefe_familia','Empleado Publico','Soltero','V','4200','Licenciatura','S','70',16)
+ERROR:root:
+[2012-07-03 21:52:07]Se registraro el miembro de familia =Jose Regalado
+ERROR:root:
+[2012-07-03 21:53:51]Se registro la vivienda de la familia =13158971
+ERROR:root:
+[2012-07-07 15:11:19]Inicio session usuario lenin
+ERROR:root:
+[2012-07-07 15:11:24]Se genero planilla pdf de familia = 16412472 el usuario lo guardo en: /home/lenin/Escritorio/familia-16412472.pdf
+ERROR:root:
+[2012-07-07 15:14:09]Se genero planilla pdf de familia = 16412472 el usuario lo guardo en: /home/lenin/Escritorio/familia-16412472.pdf
+ERROR:root:
+[2012-07-07 23:14:09]El consejo comunal Las Flores de Puente Hierro fue registrado exitosamente. INSERT INTO consejo_comunal ('tipo_consejo', 'nombre_consejo'  , 'estado', 'municipio' , 'parroquia'  ,'sector'  ,'direccion_consejo', 'vocero_nombre' ,'vocero_apellido' ,'vocero_cedula' ,'vocero_tlf' ,'vocero_tlf2' ,'vocero_correo' , 'vocero_direccion' ,'activo' ,'id_usuario' ) VALUES ('Urbana','Las Flores de Puente Hierro','Distrito Capital','Libertador','Santa Rosalia','Puente Hierro','Final  av paez','Lenin','Hernandez','16025854','0416-9874563','','leninmhs@gmail.com','puente hierro','S','1')
+ERROR:root:
+[2012-07-07 23:14:23]Login Datos incorrectos = SELECT id_usuario,co_consejo FROM usuario where usuario= 'lenin' AND passwd = 'bce9724fbb57110f8a42e1ccfd9bced0'
+ERROR:root:
+[2012-07-07 23:14:34]Inicio session usuario lenin
+ERROR:root:
+[2012-07-07 23:15:16]Fue modificando el jefe de familia =16412472
+ERROR:root:
+[2012-07-07 23:15:57]Se elimino la familia cuyo jefe es =15765456 junto a toda su informacion de vivienda, salud, bienestar, y servicios
+ERROR:root:
+[2012-07-07 23:16:05]Se genero planilla pdf de familia = 16412472 el usuario lo guardo en: /home/lenin/Escritorio/familia-16412472.pdf
+ERROR:root:
+[2012-07-11 09:38:16]Inicio session usuario lenin
+ERROR:root:
+[2012-07-11 09:45:24]Inicio session usuario lenin
+ERROR:root:
+[2012-07-14 14:33:57]Inicio session usuario lenin
+ERROR:root:
+[2012-07-14 14:37:04]Inicio session usuario lenin
+ERROR:root:
+[2012-07-14 14:38:51]Se genero planilla pdf de familia = 16412472 el usuario lo guardo en: /home/lhernandez/Escritorio/familia-16412472.pdf
+ERROR:root:
+[2012-07-14 14:52:31]Inicio session usuario lenin
+ERROR:root:
+[2012-07-14 14:54:57]Se genero planilla pdf de familia = 16412472 el usuario lo guardo en: /home/lhernandez/Escritorio/familia-16412472.pdf
+ERROR:root:
+[2012-07-14 15:03:47]Inicio session usuario lenin
+ERROR:root:
+[2012-07-14 15:04:53]Se genero planilla pdf de familia = 16412472 el usuario lo guardo en: /home/lhernandez/Escritorio/familia-16412472.pdf
+ERROR:root:
+[2012-07-19 01:04:42]Inicio session usuario lenin
+ERROR:root:
+[2012-07-27 11:29:40]Login Datos incorrectos = SELECT id_usuario,co_consejo FROM usuario where usuario= 'lenin' AND passwd = '58f2469b804c04835a9fa05a16b7c5c8'
+ERROR:root:
+[2012-07-27 11:30:05]Inicio session usuario lenin
+ERROR:root:
+[2012-07-27 11:38:33]Se genero planilla pdf de familia = 16412472 el usuario lo guardo en: /home/lhernandez/Escritorio/familia-16412472.pdf
+ERROR:root:
+[2012-08-03 16:03:29]Login Datos incorrectos = SELECT id_usuario,co_consejo FROM usuario where usuario= 'lenin' AND passwd = 'de3d898f5ec356c5c4fe13c247d7ba4d'
+ERROR:root:
+[2012-08-03 16:03:40]Inicio session usuario lenin
+ERROR:root:
+[2012-08-14 20:36:58]Login Datos incorrectos = SELECT id_usuario,co_consejo FROM usuario where usuario= 'lenin' AND passwd = '8d48bea521506152340b6f822be3703c'
+ERROR:root:
+[2012-08-14 20:37:04]Inicio session usuario lenin
+ERROR:root:
+[2012-08-14 20:37:13]Se genero planilla pdf de familia = 16412472 el usuario lo guardo en: /home/lenin/Escritorio/familia-16412472.pdf
+ERROR:root:
+[2012-08-14 21:05:23]Inicio session usuario lenin
+ERROR:root:
+[2012-08-14 21:30:02]Login Datos incorrectos = SELECT id_usuario,co_consejo FROM usuario where usuario= 'lenin' AND passwd = '8d48bea521506152340b6f822be3703c'
+ERROR:root:
+[2012-08-14 21:30:09]Inicio session usuario lenin
+ERROR:root:
+[2012-08-14 21:30:17]Se genero planilla pdf de familia = 16412472 el usuario lo guardo en: /home/lenin/Escritorio/familia-16412472.pdf
+ERROR:root:
+[2012-08-14 21:32:13]Inicio session usuario lenin
+ERROR:root:
+[2012-08-14 21:32:20]Se genero planilla pdf de familia = 16412472 el usuario lo guardo en: /home/lenin/Escritorio/familia-16412472.pdf
+ERROR:root:
+[2013-01-24 01:23:05]Login Datos incorrectos = SELECT id_usuario,co_consejo FROM usuario where usuario= 'lenin' AND passwd = '8d48bea521506152340b6f822be3703c'
+ERROR:root:
+[2013-01-24 01:23:10]Inicio session usuario lenin
+ERROR:root:
+[2013-01-24 01:28:22]Inicio session usuario lenin
+ERROR:root:
+[2013-01-24 01:28:34]Inicio session usuario lenin
+ERROR:root:
+[2013-01-24 01:30:28]Inicio session usuario lenin
+ERROR:root:
+[2013-01-24 01:31:11]Inicio session usuario lenin
+ERROR:root:
+[2013-01-24 01:31:36]Inicio session usuario lenin
+ERROR:root:
+[2013-04-12 21:08:47]Login Datos incorrectos = SELECT id_usuario,co_consejo FROM usuario where usuario= 'admin' AND passwd = '1e3fcd02b1547f847cb7fc3add4484a5'
+ERROR:root:
+[2013-04-12 21:08:51]Login Datos incorrectos = SELECT id_usuario,co_consejo FROM usuario where usuario= 'admin' AND passwd = '4fc043750a2441defd8e35d2e23e84f0'
+ERROR:root:
+[2013-04-12 21:08:57]Login Datos incorrectos = SELECT id_usuario,co_consejo FROM usuario where usuario= 'admin' AND passwd = '4fc043750a2441defd8e35d2e23e84f0'
+ERROR:root:
+[2013-04-12 21:09:06]Login Datos incorrectos = SELECT id_usuario,co_consejo FROM usuario where usuario= 'admin' AND passwd = '4fc043750a2441defd8e35d2e23e84f0'
+ERROR:root:
+[2013-04-12 21:09:34]Inicio session usuario leninmhs
+ERROR:root:
+[2013-04-12 21:11:56]Inicio session usuario leninmhs
+ERROR:root:
+[2013-04-12 21:12:29]Inicio session usuario leninmhs
+ERROR:root:
+[2013-04-12 21:12:45]Inicio session usuario leninmhs
+ERROR:root:
+[2013-04-12 21:27:56]Inicio session usuario leninmhs
+ERROR:root:
+[2013-04-12 21:28:20]Inicio session usuario leninmhs
+ERROR:root:
+[2013-04-13 00:10:39]Inicio session usuario leninmhs
+ERROR:root:
+[2013-04-13 00:11:06]Inicio session usuario leninmhs
+ERROR:root:
+[2013-04-13 00:11:29]Inicio session usuario leninmhs
+ERROR:root:
+[2013-04-13 00:15:36]Inicio session usuario leninmhs
+ERROR:root:
+[2013-04-13 00:16:19]Inicio session usuario leninmhs
+ERROR:root:
+[2013-04-13 00:16:55]Inicio session usuario leninmhs
+ERROR:root:
+[2013-04-13 00:17:36]Inicio session usuario leninmhs
+ERROR:root:
+[2013-04-13 00:20:13]Inicio session usuario leninmhs
+ERROR:root:
+[2013-04-13 00:21:00]Inicio session usuario leninmhs
+ERROR:root:
+[2013-04-13 00:22:50]Se genero planilla pdf de familia = 16412472 el usuario lo guardo en: /home/lenin/Escritorio/familia-16412472.pdf
+ERROR:root:
+[2013-04-13 00:24:48]Inicio session usuario leninmhs
+ERROR:root:
+[2013-04-13 00:34:25]Inicio session usuario leninmhs
+ERROR:root:
+[2013-04-13 00:43:09]Login Datos incorrectos = SELECT id_usuario,co_consejo FROM usuario where usuario= 'admin' AND passwd = '1e3fcd02b1547f847cb7fc3add4484a5'
+ERROR:root:
+[2013-04-13 00:43:12]Login Datos incorrectos = SELECT id_usuario,co_consejo FROM usuario where usuario= 'admin' AND passwd = '1e3fcd02b1547f847cb7fc3add4484a5'
+ERROR:root:
+[2013-04-13 00:45:30]Inicio session usuario admin

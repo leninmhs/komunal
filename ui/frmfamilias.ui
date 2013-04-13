@@ -1,0 +1,5789 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Censo_socioeconomico</class>
+ <widget class="QMainWindow" name="Censo_socioeconomico">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>986</width>
+    <height>724</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Komunal - Censo Socio-Económico</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../img/icono.png</normaloff>../img/icono.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <layout class="QGridLayout" name="gridLayout_3">
+      <item row="0" column="0">
+       <widget class="QLabel" name="lblNombreConsejo">
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background: #E6EAEF</string>
+        </property>
+        <property name="text">
+         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Ubuntu'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans'; font-weight:600;&quot;&gt;Consejo Comunal: &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLabel" name="lblUsuarioAutenticado">
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background: #E6EAEF</string>
+        </property>
+        <property name="text">
+         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Ubuntu'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;right&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans'; font-weight:600;&quot;&gt;Usuario: &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="1" column="0">
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>1600000</width>
+        <height>720</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QTabWidget::pane { /* The tab widget frame */
+     border-top: 2px solid #C2C7CB;
+ }
+
+ QTabWidget::tab-bar {
+     left: 5px; /* move to the right by 5px */
+ }
+
+ /* Style the tab using the tab sub-control. Note that
+     it reads QTabBar _not_ QTabWidget */
+ QTabBar::tab {
+     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                 stop: 0 #E1E1E1, stop: 0.4 #DDDDDD,
+                                 stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
+     border: 2px solid #C4C4C3;
+     border-bottom-color: #C2C7CB; /* same as the pane color */
+     border-top-left-radius: 4px;
+     border-top-right-radius: 4px;
+     min-width: 8ex;
+     padding: 4px;
+ }
+
+ QTabBar::tab:selected, QTabBar::tab:hover {
+     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                 stop: 0 #fafafa, stop: 0.4 #f4f4f4,
+                                 stop: 0.5 #e7e7e7, stop: 1.0 #fafafa);
+ }
+
+ QTabBar::tab:selected {
+     border-color: #9B9B9B;
+     border-bottom-color: #C2C7CB; /* same as pane color */
+ }
+
+ QTabBar::tab:!selected {
+     margin-top: 2px; /* make non-selected tabs look smaller */
+ }
+
+ /* make use of negative margins for overlapping tabs */
+ QTabBar::tab:selected {
+     /* expand/overlap to the left and right by 4px */
+     margin-left: -4px;
+     margin-right: -4px;
+ }
+
+ QTabBar::tab:first:selected {
+     margin-left: 0; /* the first selected tab has nothing to overlap with on the left */
+ }
+
+ QTabBar::tab:last:selected {
+     margin-right: 0; /* the last selected tab has nothing to overlap with on the right */
+ }
+
+ QTabBar::tab:only-one {
+     margin: 0; /* if there is only one tab, we don't want overlapping margins */
+ }</string>
+      </property>
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
+      <widget class="QWidget" name="Listado_familia">
+       <attribute name="title">
+        <string>Listado</string>
+       </attribute>
+       <widget class="QTableWidget" name="tableWidget">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>30</y>
+          <width>821</width>
+          <height>501</height>
+         </rect>
+        </property>
+        <property name="cursor" stdset="0">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="alternatingRowColors">
+         <bool>true</bool>
+        </property>
+        <property name="selectionMode">
+         <enum>QAbstractItemView::SingleSelection</enum>
+        </property>
+        <property name="selectionBehavior">
+         <enum>QAbstractItemView::SelectRows</enum>
+        </property>
+        <property name="sortingEnabled">
+         <bool>true</bool>
+        </property>
+        <attribute name="verticalHeaderShowSortIndicator" stdset="0">
+         <bool>true</bool>
+        </attribute>
+        <column>
+         <property name="text">
+          <string>Id</string>
+         </property>
+         <property name="font">
+          <font>
+           <family>Sans Serif</family>
+           <pointsize>10</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Cédula</string>
+         </property>
+         <property name="font">
+          <font>
+           <family>Sans Serif</family>
+           <pointsize>10</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Nombre</string>
+         </property>
+         <property name="font">
+          <font>
+           <family>Sans Serif</family>
+           <pointsize>10</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Apellido</string>
+         </property>
+         <property name="font">
+          <font>
+           <family>Sans Serif</family>
+           <pointsize>10</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Sexo</string>
+         </property>
+         <property name="font">
+          <font>
+           <family>Sans Serif</family>
+           <pointsize>10</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Edad</string>
+         </property>
+         <property name="font">
+          <font>
+           <family>Sans Serif</family>
+           <pointsize>10</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Cant</string>
+         </property>
+         <property name="font">
+          <font>
+           <family>Sans Serif</family>
+           <pointsize>10</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+        </column>
+       </widget>
+       <widget class="QFrame" name="frame">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>550</y>
+          <width>821</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: none;
+background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+stop: 0 #a6a6a6, stop: 0.08 #7f7f7f,
+stop: 0.39999 #717171, stop: 0.4 #626262,
+stop: 0.9 #4c4c4c, stop: 1 #333333);</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <widget class="QPushButton" name="btnPlanillaFamilia">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>10</y>
+           <width>131</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Sans Serif</family>
+           <pointsize>9</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+color: #333;
+border: 2px solid #555;
+border-radius: 11px;
+padding: 5px;
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #fff, stop: 1 #888);
+min-width: 80px;
+}
+
+QPushButton:hover {
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #fff, stop: 1 #bbb);
+}
+
+QPushButton:pressed {
+background: qradialgradient(cx: 0.4, cy: -0.1,
+fx: 0.4, fy: -0.1,
+radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
+}</string>
+         </property>
+         <property name="text">
+          <string>Generar Planilla</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="btnBorrarFamilia">
+         <property name="geometry">
+          <rect>
+           <x>160</x>
+           <y>10</y>
+           <width>131</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Sans Serif</family>
+           <pointsize>9</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+color: #333;
+border: 2px solid #555;
+border-radius: 11px;
+padding: 5px;
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #fff, stop: 1 #888);
+min-width: 80px;
+}
+
+QPushButton:hover {
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #fff, stop: 1 #bbb);
+}
+
+QPushButton:pressed {
+background: qradialgradient(cx: 0.4, cy: -0.1,
+fx: 0.4, fy: -0.1,
+radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
+}</string>
+         </property>
+         <property name="text">
+          <string>Eliminar Familia</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="btnModificarFamilia">
+         <property name="geometry">
+          <rect>
+           <x>310</x>
+           <y>10</y>
+           <width>112</width>
+           <height>32</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>-1</pointsize>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+color: white;
+background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #88d, stop: 0.1 #99e, stop: 0.49 #77c, stop: 0.5 #66b, stop: 1 #77c);
+border-width: 1px;
+border-color: #339;
+border-style: solid;
+border-radius: 10;
+padding: 0px;
+font-size: 12px;
+padding-left: 5px;
+padding-right: 5px;
+min-width: 100px;
+max-width: 100px;
+min-height: 30px;
+max-height: 30px;
+}
+
+QPushButton:hover {
+color: #333;
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #fff, stop: 1 #bbb);
+}
+</string>
+         </property>
+         <property name="text">
+          <string>Modificar Familia</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="btnSalirKomunal">
+         <property name="geometry">
+          <rect>
+           <x>700</x>
+           <y>10</y>
+           <width>97</width>
+           <height>27</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Sans Serif</family>
+           <pointsize>10</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+color: #333;
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #fff, stop: 1 #888);
+}
+
+QPushButton:hover {
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #fff, stop: 1 #bbb);
+}
+
+QPushButton:pressed {
+background: qradialgradient(cx: 0.4, cy: -0.1,
+fx: 0.4, fy: -0.1,
+radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
+}
+</string>
+         </property>
+         <property name="text">
+          <string>Salir</string>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QLabel" name="lblTotalFamilias">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>530</y>
+          <width>821</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background: #E6EAEF</string>
+        </property>
+        <property name="text">
+         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Total de Registros Encontrados:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="Datos_Familia">
+       <attribute name="title">
+        <string>&amp;Grupo Familiar</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="0" column="0">
+         <widget class="QTabWidget" name="tabWidget">
+          <property name="palette">
+           <palette>
+            <active/>
+            <inactive/>
+            <disabled/>
+           </palette>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="currentIndex">
+           <number>1</number>
+          </property>
+          <widget class="QWidget" name="jefe_familia">
+           <attribute name="title">
+            <string>&amp;Jefe de Familia</string>
+           </attribute>
+           <widget class="QFrame" name="frame_3">
+            <property name="geometry">
+             <rect>
+              <x>50</x>
+              <y>80</y>
+              <width>741</width>
+              <height>281</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <widget class="QLabel" name="Sexo_jefe">
+             <property name="geometry">
+              <rect>
+               <x>290</x>
+               <y>80</y>
+               <width>71</width>
+               <height>17</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>Sexo *</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="Ingreso_jefe">
+             <property name="geometry">
+              <rect>
+               <x>290</x>
+               <y>150</y>
+               <width>171</width>
+               <height>17</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>Ingresos Mensuales *</string>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="cmbLugarNacimientoJefe">
+             <property name="geometry">
+              <rect>
+               <x>20</x>
+               <y>230</y>
+               <width>221</width>
+               <height>27</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label">
+             <property name="geometry">
+              <rect>
+               <x>540</x>
+               <y>10</y>
+               <width>71</width>
+               <height>17</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <family>Sans Serif</family>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>Cédula *</string>
+             </property>
+            </widget>
+            <widget class="QComboBox" name="cmbNacionalidadJefe">
+             <property name="geometry">
+              <rect>
+               <x>20</x>
+               <y>100</y>
+               <width>141</width>
+               <height>27</height>
+              </rect>
+             </property>
+             <item>
+              <property name="text">
+               <string>Venezolano</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Extranjero</string>
+              </property>
+             </item>
+            </widget>
+            <widget class="QLineEdit" name="txtApellidojefe">
+             <property name="geometry">
+              <rect>
+               <x>290</x>
+               <y>30</y>
+               <width>221</width>
+               <height>27</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QComboBox" name="cmbEdoCivilJefe">
+             <property name="geometry">
+              <rect>
+               <x>540</x>
+               <y>100</y>
+               <width>161</width>
+               <height>27</height>
+              </rect>
+             </property>
+             <item>
+              <property name="text">
+               <string>Soltero</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Casado</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Viudo</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Divorciado</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Conyugue</string>
+              </property>
+             </item>
+            </widget>
+            <widget class="QLabel" name="Fecha_Nacimiento">
+             <property name="geometry">
+              <rect>
+               <x>290</x>
+               <y>210</y>
+               <width>161</width>
+               <height>17</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>Fecha de Nacimiento *</string>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="txtNombrejefe">
+             <property name="geometry">
+              <rect>
+               <x>20</x>
+               <y>30</y>
+               <width>221</width>
+               <height>27</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLabel" name="Nombre_jefe">
+             <property name="geometry">
+              <rect>
+               <x>20</x>
+               <y>10</y>
+               <width>91</width>
+               <height>17</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <family>Sans Serif</family>
+               <pointsize>10</pointsize>
+               <weight>75</weight>
+               <italic>false</italic>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>Nombres *</string>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="txtCedulaJefe">
+             <property name="geometry">
+              <rect>
+               <x>540</x>
+               <y>30</y>
+               <width>181</width>
+               <height>27</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_2">
+             <property name="geometry">
+              <rect>
+               <x>540</x>
+               <y>80</y>
+               <width>101</width>
+               <height>17</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>Estado Civil *</string>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="txtIngresoJefe">
+             <property name="geometry">
+              <rect>
+               <x>290</x>
+               <y>170</y>
+               <width>171</width>
+               <height>27</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLabel" name="Nacionalidad_jefe">
+             <property name="geometry">
+              <rect>
+               <x>20</x>
+               <y>80</y>
+               <width>111</width>
+               <height>17</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>Nacionalidad *</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="Ocupacion_jefe">
+             <property name="geometry">
+              <rect>
+               <x>20</x>
+               <y>150</y>
+               <width>121</width>
+               <height>17</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>Ocupación *</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="Lugar_nacimiento_jefe">
+             <property name="geometry">
+              <rect>
+               <x>20</x>
+               <y>210</y>
+               <width>171</width>
+               <height>17</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>Lugar de Nacimiento</string>
+             </property>
+            </widget>
+            <widget class="QComboBox" name="cmbGradoInstruccion">
+             <property name="geometry">
+              <rect>
+               <x>540</x>
+               <y>170</y>
+               <width>181</width>
+               <height>27</height>
+              </rect>
+             </property>
+             <item>
+              <property name="text">
+               <string>Bachiller</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>N/P</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Basica</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Tecnico Medio</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>T.S.U.</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Licenciatura</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Ingeniero</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Doctorado</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Magister</string>
+              </property>
+             </item>
+            </widget>
+            <widget class="QLabel" name="Grado_Instruccion">
+             <property name="geometry">
+              <rect>
+               <x>540</x>
+               <y>150</y>
+               <width>161</width>
+               <height>17</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>Grado de Instrucción*</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="Apellido_jefe">
+             <property name="geometry">
+              <rect>
+               <x>290</x>
+               <y>10</y>
+               <width>91</width>
+               <height>17</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <family>Sans Serif</family>
+               <pointsize>10</pointsize>
+               <weight>75</weight>
+               <italic>false</italic>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>Apellidos *</string>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="txtOcupacionJefe">
+             <property name="geometry">
+              <rect>
+               <x>20</x>
+               <y>170</y>
+               <width>221</width>
+               <height>27</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QComboBox" name="cmbSexoJefe">
+             <property name="geometry">
+              <rect>
+               <x>290</x>
+               <y>100</y>
+               <width>121</width>
+               <height>27</height>
+              </rect>
+             </property>
+             <item>
+              <property name="text">
+               <string>Masculino</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Femenino</string>
+              </property>
+             </item>
+            </widget>
+            <widget class="QDateEdit" name="txtFechaNacJefe">
+             <property name="geometry">
+              <rect>
+               <x>290</x>
+               <y>230</y>
+               <width>171</width>
+               <height>31</height>
+              </rect>
+             </property>
+             <property name="currentSection">
+              <enum>QDateTimeEdit::DaySection</enum>
+             </property>
+             <property name="displayFormat">
+              <string>dd-MM-yyyy</string>
+             </property>
+             <property name="calendarPopup">
+              <bool>true</bool>
+             </property>
+            </widget>
+            <widget class="QLabel" name="lblErrorNombreJefe">
+             <property name="geometry">
+              <rect>
+               <x>110</x>
+               <y>10</y>
+               <width>141</width>
+               <height>20</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>10</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: red;</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="textFormat">
+              <enum>Qt::RichText</enum>
+             </property>
+            </widget>
+            <widget class="QLabel" name="lblErrorApellidoJefe">
+             <property name="geometry">
+              <rect>
+               <x>380</x>
+               <y>10</y>
+               <width>161</width>
+               <height>20</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>10</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: red;</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="textFormat">
+              <enum>Qt::RichText</enum>
+             </property>
+            </widget>
+            <widget class="QLabel" name="lblErrorCedulaJefe">
+             <property name="geometry">
+              <rect>
+               <x>620</x>
+               <y>10</y>
+               <width>121</width>
+               <height>20</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <family>Ubuntu</family>
+               <pointsize>11</pointsize>
+               <weight>50</weight>
+               <italic>true</italic>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: red;
+font: 11pt &quot;Ubuntu&quot;;
+font: italic 11pt &quot;Ubuntu&quot;;</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="textFormat">
+              <enum>Qt::RichText</enum>
+             </property>
+            </widget>
+            <widget class="QLabel" name="lblErrorOcupacionJefe">
+             <property name="geometry">
+              <rect>
+               <x>110</x>
+               <y>150</y>
+               <width>131</width>
+               <height>20</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <family>Ubuntu</family>
+               <pointsize>11</pointsize>
+               <weight>50</weight>
+               <italic>true</italic>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: red;
+font: 11pt &quot;Ubuntu&quot;;
+font: italic 11pt &quot;Ubuntu&quot;;</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="textFormat">
+              <enum>Qt::RichText</enum>
+             </property>
+            </widget>
+            <widget class="QLabel" name="lblErrorFechaJefe">
+             <property name="geometry">
+              <rect>
+               <x>290</x>
+               <y>260</y>
+               <width>161</width>
+               <height>20</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <family>Ubuntu</family>
+               <pointsize>11</pointsize>
+               <weight>50</weight>
+               <italic>true</italic>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: red;
+font: 11pt &quot;Ubuntu&quot;;
+font: italic 11pt &quot;Ubuntu&quot;;</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="textFormat">
+              <enum>Qt::RichText</enum>
+             </property>
+            </widget>
+            <widget class="QLabel" name="lblErrorIngresosJefe">
+             <property name="geometry">
+              <rect>
+               <x>290</x>
+               <y>130</y>
+               <width>141</width>
+               <height>20</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <family>Ubuntu</family>
+               <pointsize>11</pointsize>
+               <weight>50</weight>
+               <italic>true</italic>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: red;
+font: 11pt &quot;Ubuntu&quot;;
+font: italic 11pt &quot;Ubuntu&quot;;</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="textFormat">
+              <enum>Qt::RichText</enum>
+             </property>
+            </widget>
+           </widget>
+           <widget class="QLabel" name="lblNotificacionJefeFamilia">
+            <property name="geometry">
+             <rect>
+              <x>50</x>
+              <y>20</y>
+              <width>741</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">border: 1px solid Yellow;
+background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+stop: 0 #FFFF80, stop: 0.08 #FAFFD8,
+stop: 0.39999 #FEFFE5, stop: 0.4 #FEFFE5,
+stop: 0.9 #FAFFD8, stop: 1 #fff);
+
+</string>
+            </property>
+            <property name="text">
+             <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Ubuntu'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="Limpiar_datos_jefe">
+            <property name="geometry">
+             <rect>
+              <x>840</x>
+              <y>140</y>
+              <width>94</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <family>Sans Serif</family>
+              <pointsize>10</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
+color: #333;
+border: 2px solid #555;
+border-radius: 11px;
+padding: 5px;
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #fff, stop: 1 #888);
+min-width: 80px;
+}
+
+QPushButton:hover {
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #fff, stop: 1 #bbb);
+}
+
+QPushButton:pressed {
+background: qradialgradient(cx: 0.4, cy: -0.1,
+fx: 0.4, fy: -0.1,
+radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
+}</string>
+            </property>
+            <property name="text">
+             <string>Limpiar</string>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="btnGuardarJefeFamilia">
+            <property name="geometry">
+             <rect>
+              <x>840</x>
+              <y>90</y>
+              <width>94</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <family>Sans Serif</family>
+              <pointsize>10</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
+color: #333;
+border: 2px solid #555;
+border-radius: 11px;
+padding: 5px;
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #fff, stop: 1 #888);
+min-width: 80px;
+}
+
+QPushButton:hover {
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #fff, stop: 1 #bbb);
+}
+
+QPushButton:pressed {
+background: qradialgradient(cx: 0.4, cy: -0.1,
+fx: 0.4, fy: -0.1,
+radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
+}</string>
+            </property>
+            <property name="text">
+             <string>Guardar</string>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="btnModificarJefeFamilia">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="geometry">
+             <rect>
+              <x>840</x>
+              <y>190</y>
+              <width>94</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <family>Sans Serif</family>
+              <pointsize>10</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
+color: #333;
+border: 2px solid #555;
+border-radius: 11px;
+padding: 5px;
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #fff, stop: 1 #888);
+min-width: 80px;
+}
+
+QPushButton:hover {
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #fff, stop: 1 #bbb);
+}
+
+QPushButton:pressed {
+background: qradialgradient(cx: 0.4, cy: -0.1,
+fx: 0.4, fy: -0.1,
+radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
+}</string>
+            </property>
+            <property name="text">
+             <string>Modificar</string>
+            </property>
+           </widget>
+           <widget class="Line" name="line">
+            <property name="geometry">
+             <rect>
+              <x>820</x>
+              <y>90</y>
+              <width>16</width>
+              <height>251</height>
+             </rect>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+           </widget>
+          </widget>
+          <widget class="QWidget" name="intgrantes">
+           <attribute name="title">
+            <string>&amp;Integrantes Familiar</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_12">
+            <item row="1" column="0">
+             <layout class="QGridLayout" name="gridLayout_5">
+              <item row="0" column="7">
+               <spacer name="verticalSpacer_7">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item row="1" column="2">
+               <widget class="QLabel" name="label_12">
+                <property name="font">
+                 <font>
+                  <family>Sans Serif</family>
+                  <pointsize>9</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Apellidos</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="3">
+               <widget class="QLabel" name="label_53">
+                <property name="font">
+                 <font>
+                  <family>Sans Serif</family>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Cédulas</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="4">
+               <widget class="QLabel" name="label_13">
+                <property name="font">
+                 <font>
+                  <family>Sans Serif</family>
+                  <pointsize>9</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Parentesco</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="5">
+               <widget class="QLabel" name="label_14">
+                <property name="font">
+                 <font>
+                  <family>Sans Serif</family>
+                  <pointsize>9</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Fecha Nac</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="7">
+               <widget class="QLabel" name="label_15">
+                <property name="font">
+                 <font>
+                  <family>Sans Serif</family>
+                  <pointsize>9</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Estado Civil</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="8">
+               <widget class="QLabel" name="label_16">
+                <property name="font">
+                 <font>
+                  <family>Sans Serif</family>
+                  <pointsize>9</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Grado de Instrucción</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="9">
+               <widget class="QLabel" name="label_17">
+                <property name="font">
+                 <font>
+                  <family>Sans Serif</family>
+                  <pointsize>9</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Ocupación</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="10">
+               <widget class="QLabel" name="label_18">
+                <property name="font">
+                 <font>
+                  <family>Sans Serif</family>
+                  <pointsize>9</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Ingreso</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="1">
+               <widget class="QLineEdit" name="lblNombreF1"/>
+              </item>
+              <item row="2" column="2">
+               <widget class="QLineEdit" name="lblApellidoF1"/>
+              </item>
+              <item row="2" column="3">
+               <widget class="QLineEdit" name="lblCedulaF1"/>
+              </item>
+              <item row="2" column="4">
+               <widget class="QLineEdit" name="lblParentescoF1"/>
+              </item>
+              <item row="2" column="7">
+               <widget class="QComboBox" name="cmbEdoCivilF1">
+                <item>
+                 <property name="text">
+                  <string>Soltero</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Casado</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Viudo</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Divorsiado</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Conyuge</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="2" column="8">
+               <widget class="QComboBox" name="cmbInstruccionF1">
+                <item>
+                 <property name="text">
+                  <string>Bachiller</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>N/P</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Basica</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Tecnico Medio</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>T.S.U.</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Licenciatura</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Ingeniero</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Doctorado</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Magister</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="2" column="9">
+               <widget class="QLineEdit" name="lblOcupacionF1"/>
+              </item>
+              <item row="2" column="10">
+               <widget class="QLineEdit" name="lblIngresoF1"/>
+              </item>
+              <item row="3" column="1">
+               <widget class="QLineEdit" name="lblNombreF2"/>
+              </item>
+              <item row="3" column="2">
+               <widget class="QLineEdit" name="lblApellidoF2"/>
+              </item>
+              <item row="3" column="3">
+               <widget class="QLineEdit" name="lblCedulaF2"/>
+              </item>
+              <item row="3" column="4">
+               <widget class="QLineEdit" name="lblParentescoF2"/>
+              </item>
+              <item row="3" column="7">
+               <widget class="QComboBox" name="cmbEdoCivilF2">
+                <item>
+                 <property name="text">
+                  <string>Soltero</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Casado</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Viudo</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Divorsiado</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Conyuge</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="3" column="8">
+               <widget class="QComboBox" name="cmbInstruccionF2">
+                <item>
+                 <property name="text">
+                  <string>Bachiller</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Basica</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Tecnico Medio</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>T.S.U.</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Licenciatura</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Ingeniero</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Doctorado</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Magister</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="3" column="9">
+               <widget class="QLineEdit" name="lblOcupacionF2"/>
+              </item>
+              <item row="3" column="10">
+               <widget class="QLineEdit" name="lblIngresoF2"/>
+              </item>
+              <item row="4" column="1">
+               <widget class="QLineEdit" name="lblNombreF3"/>
+              </item>
+              <item row="4" column="2">
+               <widget class="QLineEdit" name="lblApellidoF3"/>
+              </item>
+              <item row="4" column="3">
+               <widget class="QLineEdit" name="lblCedulaF3"/>
+              </item>
+              <item row="4" column="4">
+               <widget class="QLineEdit" name="lblParentescoF3"/>
+              </item>
+              <item row="4" column="7">
+               <widget class="QComboBox" name="cmbEdoCivilF3">
+                <item>
+                 <property name="text">
+                  <string>Soltero</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Casado</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Viudo</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Divorsiado</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Conyuge</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="4" column="8">
+               <widget class="QComboBox" name="cmbInstruccionF3">
+                <item>
+                 <property name="text">
+                  <string>Bachiller</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Basica</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Tecnico Medio</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>T.S.U.</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Licenciatura</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Ingeniero</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Doctorado</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Magister</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="4" column="9">
+               <widget class="QLineEdit" name="lblOcupacionF3"/>
+              </item>
+              <item row="4" column="10">
+               <widget class="QLineEdit" name="lblIngresoF3"/>
+              </item>
+              <item row="5" column="0">
+               <spacer name="horizontalSpacer_7">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>13</width>
+                  <height>22</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item row="5" column="1">
+               <widget class="QLineEdit" name="lblNombreF4"/>
+              </item>
+              <item row="5" column="2">
+               <widget class="QLineEdit" name="lblApellidoF4"/>
+              </item>
+              <item row="5" column="3">
+               <widget class="QLineEdit" name="lblCedulaF4"/>
+              </item>
+              <item row="5" column="4">
+               <widget class="QLineEdit" name="lblParentescoF4"/>
+              </item>
+              <item row="5" column="7">
+               <widget class="QComboBox" name="cmbEdoCivilF4">
+                <item>
+                 <property name="text">
+                  <string>Soltero</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Casado</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Viudo</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Divorsiado</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Conyuge</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="5" column="8">
+               <widget class="QComboBox" name="cmbInstruccionF4">
+                <item>
+                 <property name="text">
+                  <string>Bachiller</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Basica</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Tecnico Medio</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>T.S.U.</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Licenciatura</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Ingeniero</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Doctorado</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Magister</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="5" column="9">
+               <widget class="QLineEdit" name="lblOcupacionF4"/>
+              </item>
+              <item row="5" column="10">
+               <widget class="QLineEdit" name="lblIngresoF4"/>
+              </item>
+              <item row="6" column="1">
+               <widget class="QLineEdit" name="lblNombreF5"/>
+              </item>
+              <item row="6" column="2">
+               <widget class="QLineEdit" name="lblApellidoF5"/>
+              </item>
+              <item row="6" column="3">
+               <widget class="QLineEdit" name="lblCedulaF5"/>
+              </item>
+              <item row="6" column="4">
+               <widget class="QLineEdit" name="lblParentescoF5"/>
+              </item>
+              <item row="6" column="7">
+               <widget class="QComboBox" name="cmbEdoCivilF5">
+                <item>
+                 <property name="text">
+                  <string>Soltero</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Casado</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Viudo</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Divorsiado</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Conyuge</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="6" column="8">
+               <widget class="QComboBox" name="cmbInstruccionF5">
+                <item>
+                 <property name="text">
+                  <string>Bachiller</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Basica</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Tecnico Medio</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>T.S.U.</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Licenciatura</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Ingeniero</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Doctorado</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Magister</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="6" column="9">
+               <widget class="QLineEdit" name="lblOcupacionF5"/>
+              </item>
+              <item row="6" column="10">
+               <widget class="QLineEdit" name="lblIngresoF5"/>
+              </item>
+              <item row="6" column="11">
+               <spacer name="horizontalSpacer_8">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>13</width>
+                  <height>22</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item row="7" column="1">
+               <widget class="QLineEdit" name="lblNombreF6"/>
+              </item>
+              <item row="7" column="2">
+               <widget class="QLineEdit" name="lblApellidoF6"/>
+              </item>
+              <item row="7" column="3">
+               <widget class="QLineEdit" name="lblCedulaF6"/>
+              </item>
+              <item row="7" column="4">
+               <widget class="QLineEdit" name="lblParentescoF6"/>
+              </item>
+              <item row="7" column="7">
+               <widget class="QComboBox" name="cmbEdoCivilF6">
+                <item>
+                 <property name="text">
+                  <string>Soltero</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Casado</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Viudo</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Divorsiado</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Conyuge</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="7" column="8">
+               <widget class="QComboBox" name="cmbInstruccionF6">
+                <item>
+                 <property name="text">
+                  <string>Bachiller</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Basica</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Tecnico Medio</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>T.S.U.</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Licenciatura</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Ingeniero</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Doctorado</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Magister</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="7" column="9">
+               <widget class="QLineEdit" name="lblOcupacionF6"/>
+              </item>
+              <item row="7" column="10">
+               <widget class="QLineEdit" name="lblIngresoF6"/>
+              </item>
+              <item row="8" column="1">
+               <widget class="QLineEdit" name="lblNombreF7"/>
+              </item>
+              <item row="8" column="2">
+               <widget class="QLineEdit" name="lblApellidoF7"/>
+              </item>
+              <item row="8" column="3">
+               <widget class="QLineEdit" name="lblCedulaF7"/>
+              </item>
+              <item row="8" column="4">
+               <widget class="QLineEdit" name="lblParentescoF7"/>
+              </item>
+              <item row="8" column="7">
+               <widget class="QComboBox" name="cmbEdoCivilF7">
+                <item>
+                 <property name="text">
+                  <string>Soltero</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Casado</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Viudo</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Divorsiado</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Conyuge</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="8" column="8">
+               <widget class="QComboBox" name="cmbInstruccionF7">
+                <item>
+                 <property name="text">
+                  <string>Bachiller</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Basica</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Tecnico Medio</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>T.S.U.</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Licenciatura</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Ingeniero</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Doctorado</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Magister</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="8" column="9">
+               <widget class="QLineEdit" name="lblOcupacionF7"/>
+              </item>
+              <item row="8" column="10">
+               <widget class="QLineEdit" name="lblIngresoF7"/>
+              </item>
+              <item row="9" column="1">
+               <widget class="QLineEdit" name="lblNombreF8"/>
+              </item>
+              <item row="9" column="2">
+               <widget class="QLineEdit" name="lblApellidoF8"/>
+              </item>
+              <item row="9" column="3">
+               <widget class="QLineEdit" name="lblCedulaF8"/>
+              </item>
+              <item row="9" column="4">
+               <widget class="QLineEdit" name="lblParentescoF8"/>
+              </item>
+              <item row="9" column="7">
+               <widget class="QComboBox" name="cmbEdoCivilF8">
+                <item>
+                 <property name="text">
+                  <string>Soltero</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Casado</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Viudo</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Divorsiado</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Conyuge</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="9" column="8">
+               <widget class="QComboBox" name="cmbInstruccionF8">
+                <item>
+                 <property name="text">
+                  <string>Bachiller</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Basica</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Tecnico Medio</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>T.S.U.</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Licenciatura</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Ingeniero</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Doctorado</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Magister</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="9" column="9">
+               <widget class="QLineEdit" name="lblOcupacionF8"/>
+              </item>
+              <item row="9" column="10">
+               <widget class="QLineEdit" name="lblIngresoF8"/>
+              </item>
+              <item row="10" column="1">
+               <widget class="QLineEdit" name="lblNombreF9"/>
+              </item>
+              <item row="10" column="2">
+               <widget class="QLineEdit" name="lblApellidoF9"/>
+              </item>
+              <item row="10" column="3">
+               <widget class="QLineEdit" name="lblCedulaF9"/>
+              </item>
+              <item row="10" column="4">
+               <widget class="QLineEdit" name="lblParentescoF9"/>
+              </item>
+              <item row="10" column="7">
+               <widget class="QComboBox" name="cmbEdoCivilF9">
+                <item>
+                 <property name="text">
+                  <string>Soltero</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Casado</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Viudo</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Divorsiado</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Conyuge</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="10" column="8">
+               <widget class="QComboBox" name="cmbInstruccionF9">
+                <item>
+                 <property name="text">
+                  <string>Bachiller</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Basica</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Tecnico Medio</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>T.S.U.</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Licenciatura</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Ingeniero</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Doctorado</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Magister</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="10" column="9">
+               <widget class="QLineEdit" name="lblOcupacionF9"/>
+              </item>
+              <item row="10" column="10">
+               <widget class="QLineEdit" name="lblIngresoF9"/>
+              </item>
+              <item row="11" column="7">
+               <spacer name="verticalSpacer_8">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item row="1" column="1">
+               <widget class="QLabel" name="label_11">
+                <property name="font">
+                 <font>
+                  <family>Sans Serif</family>
+                  <pointsize>9</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Nombres</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="5">
+               <widget class="QDateEdit" name="lblFechaF1">
+                <property name="displayFormat">
+                 <string>dd-MM-yy</string>
+                </property>
+                <property name="calendarPopup">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="5">
+               <widget class="QDateEdit" name="lblFechaF2">
+                <property name="displayFormat">
+                 <string>dd-MM-yy</string>
+                </property>
+                <property name="calendarPopup">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="5">
+               <widget class="QDateEdit" name="lblFechaF3">
+                <property name="displayFormat">
+                 <string>dd-MM-yy</string>
+                </property>
+                <property name="calendarPopup">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="5" column="5">
+               <widget class="QDateEdit" name="lblFechaF4">
+                <property name="calendarPopup">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="6" column="5">
+               <widget class="QDateEdit" name="lblFechaF5">
+                <property name="calendarPopup">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="7" column="5">
+               <widget class="QDateEdit" name="lblFechaF6">
+                <property name="calendarPopup">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="8" column="5">
+               <widget class="QDateEdit" name="lblFechaF7">
+                <property name="calendarPopup">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="9" column="5">
+               <widget class="QDateEdit" name="lblFechaF8">
+                <property name="calendarPopup">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="10" column="5">
+               <widget class="QDateEdit" name="lblFechaF9">
+                <property name="calendarPopup">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="6">
+               <widget class="QComboBox" name="cmbSexoF1">
+                <item>
+                 <property name="text">
+                  <string>M</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>F</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="3" column="6">
+               <widget class="QComboBox" name="cmbSexoF2">
+                <item>
+                 <property name="text">
+                  <string>M</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>F</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="4" column="6">
+               <widget class="QComboBox" name="cmbSexoF3">
+                <item>
+                 <property name="text">
+                  <string>M</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>F</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="5" column="6">
+               <widget class="QComboBox" name="cmbSexoF4">
+                <item>
+                 <property name="text">
+                  <string>M</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>F</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="6" column="6">
+               <widget class="QComboBox" name="cmbSexoF5">
+                <item>
+                 <property name="text">
+                  <string>M</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>F</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="7" column="6">
+               <widget class="QComboBox" name="cmbSexoF6">
+                <item>
+                 <property name="text">
+                  <string>M</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>F</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="8" column="6">
+               <widget class="QComboBox" name="cmbSexoF7">
+                <item>
+                 <property name="text">
+                  <string>M</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>F</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="9" column="6">
+               <widget class="QComboBox" name="cmbSexoF8">
+                <item>
+                 <property name="text">
+                  <string>M</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>F</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="10" column="6">
+               <widget class="QComboBox" name="cmbSexoF9">
+                <item>
+                 <property name="text">
+                  <string>M</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>F</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="1" column="6">
+               <widget class="QLabel" name="label_3">
+                <property name="font">
+                 <font>
+                  <family>Sans Serif</family>
+                  <pointsize>9</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Sexo</string>
+                </property>
+               </widget>
+              </item>
+              <item row="11" column="6">
+               <widget class="QPushButton" name="btnLimpiarGFamiliar">
+                <property name="font">
+                 <font>
+                  <family>Sans Serif</family>
+                  <pointsize>10</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton {
+color: #333;
+border: 2px solid #555;
+border-radius: 11px;
+padding: 5px;
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #fff, stop: 1 #888);
+min-width: 80px;
+}
+
+QPushButton:hover {
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #fff, stop: 1 #bbb);
+}
+
+QPushButton:pressed {
+background: qradialgradient(cx: 0.4, cy: -0.1,
+fx: 0.4, fy: -0.1,
+radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
+}</string>
+                </property>
+                <property name="text">
+                 <string>Limpiar</string>
+                </property>
+               </widget>
+              </item>
+              <item row="11" column="5">
+               <widget class="QPushButton" name="btnGuardarMiembros">
+                <property name="font">
+                 <font>
+                  <family>Sans Serif</family>
+                  <pointsize>10</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton {
+color: #333;
+border: 2px solid #555;
+border-radius: 11px;
+padding: 5px;
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #fff, stop: 1 #888);
+min-width: 80px;
+}
+
+QPushButton:hover {
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #fff, stop: 1 #bbb);
+}
+
+QPushButton:pressed {
+background: qradialgradient(cx: 0.4, cy: -0.1,
+fx: 0.4, fy: -0.1,
+radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
+}</string>
+                </property>
+                <property name="text">
+                 <string>Aceptar</string>
+                </property>
+               </widget>
+              </item>
+              <item row="11" column="4">
+               <widget class="QPushButton" name="btnModificarMiembros">
+                <property name="font">
+                 <font>
+                  <family>Sans Serif</family>
+                  <pointsize>10</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton {
+color: #333;
+border: 2px solid #555;
+border-radius: 11px;
+padding: 5px;
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #fff, stop: 1 #888);
+min-width: 80px;
+}
+
+QPushButton:hover {
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #fff, stop: 1 #bbb);
+}
+
+QPushButton:pressed {
+background: qradialgradient(cx: 0.4, cy: -0.1,
+fx: 0.4, fy: -0.1,
+radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
+}</string>
+                </property>
+                <property name="text">
+                 <string>Modificar</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item row="0" column="0">
+             <widget class="QLabel" name="lblNotificacionGrupoFamiliar">
+              <property name="font">
+               <font>
+                <pointsize>12</pointsize>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">border: 1px solid Yellow;
+background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+stop: 0 #FFFF80, stop: 0.08 #FAFFD8,
+stop: 0.39999 #FEFFE5, stop: 0.4 #FEFFE5,
+stop: 0.9 #FAFFD8, stop: 1 #fff);
+
+</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="Vivienda">
+       <attribute name="title">
+        <string>Vivienda</string>
+       </attribute>
+       <widget class="QLabel" name="label_20">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>10</y>
+          <width>641</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Sans Serif</family>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Caracteristica de la Vivienda</string>
+        </property>
+       </widget>
+       <widget class="QWidget" name="layoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>2</width>
+          <height>2</height>
+         </rect>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_9"/>
+       </widget>
+       <widget class="QPushButton" name="btnGuardarVivienda">
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>470</y>
+          <width>94</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Sans Serif</family>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+color: #333;
+border: 2px solid #555;
+border-radius: 11px;
+padding: 5px;
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #fff, stop: 1 #888);
+min-width: 80px;
+}
+
+QPushButton:hover {
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #fff, stop: 1 #bbb);
+}
+
+QPushButton:pressed {
+background: qradialgradient(cx: 0.4, cy: -0.1,
+fx: 0.4, fy: -0.1,
+radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
+}</string>
+        </property>
+        <property name="text">
+         <string>Guardar</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btnLimpiarVivienda">
+        <property name="geometry">
+         <rect>
+          <x>410</x>
+          <y>470</y>
+          <width>94</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Sans Serif</family>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+color: #333;
+border: 2px solid #555;
+border-radius: 11px;
+padding: 5px;
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #fff, stop: 1 #888);
+min-width: 80px;
+}
+
+QPushButton:hover {
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #fff, stop: 1 #bbb);
+}
+
+QPushButton:pressed {
+background: qradialgradient(cx: 0.4, cy: -0.1,
+fx: 0.4, fy: -0.1,
+radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
+}</string>
+        </property>
+        <property name="text">
+         <string>Limpiar</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btnModificarVivienda">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>670</x>
+          <y>470</y>
+          <width>94</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Sans Serif</family>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+color: #333;
+border: 2px solid #555;
+border-radius: 11px;
+padding: 5px;
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #fff, stop: 1 #888);
+min-width: 80px;
+}
+
+QPushButton:hover {
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #fff, stop: 1 #bbb);
+}
+
+QPushButton:pressed {
+background: qradialgradient(cx: 0.4, cy: -0.1,
+fx: 0.4, fy: -0.1,
+radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
+}</string>
+        </property>
+        <property name="text">
+         <string>Modificar</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lblNotificacionVivienda">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>40</y>
+          <width>871</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 1px solid Yellow;
+background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+stop: 0 #FFFF80, stop: 0.08 #FAFFD8,
+stop: 0.39999 #FEFFE5, stop: 0.4 #FEFFE5,
+stop: 0.9 #FAFFD8, stop: 1 #fff);
+
+</string>
+        </property>
+        <property name="text">
+         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Ubuntu'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+       <widget class="QFrame" name="frame_2">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>90</y>
+          <width>881</width>
+          <height>321</height>
+         </rect>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <widget class="QComboBox" name="cmbTipoVivienda">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>30</y>
+           <width>144</width>
+           <height>27</height>
+          </rect>
+         </property>
+         <item>
+          <property name="text">
+           <string>Casa</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Apartamento</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Rancho</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Quinta</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Otra</string>
+          </property>
+         </item>
+        </widget>
+        <widget class="QLabel" name="label_25">
+         <property name="geometry">
+          <rect>
+           <x>650</x>
+           <y>10</y>
+           <width>281</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Sans Serif</family>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Materiales de la Pared</string>
+         </property>
+        </widget>
+        <widget class="QComboBox" name="cmbTenencia">
+         <property name="geometry">
+          <rect>
+           <x>440</x>
+           <y>30</y>
+           <width>144</width>
+           <height>27</height>
+          </rect>
+         </property>
+         <item>
+          <property name="text">
+           <string>Propia</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Alquilado</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Opcion a compra</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Otra</string>
+          </property>
+         </item>
+        </widget>
+        <widget class="QLabel" name="label_21">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>10</y>
+           <width>141</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Sans Serif</family>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Tipo de Vivienda</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_22">
+         <property name="geometry">
+          <rect>
+           <x>220</x>
+           <y>10</y>
+           <width>291</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Sans Serif</family>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Estado de la Vivienda</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_23">
+         <property name="geometry">
+          <rect>
+           <x>440</x>
+           <y>10</y>
+           <width>221</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Sans Serif</family>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Tenencia</string>
+         </property>
+        </widget>
+        <widget class="QComboBox" name="cmbEstadoVivienda">
+         <property name="geometry">
+          <rect>
+           <x>220</x>
+           <y>30</y>
+           <width>161</width>
+           <height>27</height>
+          </rect>
+         </property>
+         <item>
+          <property name="text">
+           <string>Bueno</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Regular</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Malo</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Otro</string>
+          </property>
+         </item>
+        </widget>
+        <widget class="QComboBox" name="cmbMaterialPared">
+         <property name="geometry">
+          <rect>
+           <x>650</x>
+           <y>30</y>
+           <width>220</width>
+           <height>27</height>
+          </rect>
+         </property>
+         <item>
+          <property name="text">
+           <string>Bloque Friso, Bloque Sin Friso</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Bahareque, Cana, Palma</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Ladrillo, Zinc</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Otro</string>
+          </property>
+         </item>
+        </widget>
+        <widget class="QComboBox" name="cmbMaterialPiso">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>100</y>
+           <width>141</width>
+           <height>27</height>
+          </rect>
+         </property>
+         <item>
+          <property name="text">
+           <string>Cemento</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Granito</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Ceramica</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Otro</string>
+          </property>
+         </item>
+        </widget>
+        <widget class="QLabel" name="label_28">
+         <property name="geometry">
+          <rect>
+           <x>440</x>
+           <y>80</y>
+           <width>281</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Sans Serif</family>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Uso de la vivienda</string>
+         </property>
+        </widget>
+        <widget class="QComboBox" name="cmbMaterialTecho">
+         <property name="geometry">
+          <rect>
+           <x>220</x>
+           <y>100</y>
+           <width>161</width>
+           <height>27</height>
+          </rect>
+         </property>
+         <item>
+          <property name="text">
+           <string>Platabanda</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Tejas</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Abesto</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Otro</string>
+          </property>
+         </item>
+        </widget>
+        <widget class="QComboBox" name="cmbUsoVivienda">
+         <property name="geometry">
+          <rect>
+           <x>440</x>
+           <y>100</y>
+           <width>141</width>
+           <height>27</height>
+          </rect>
+         </property>
+         <item>
+          <property name="text">
+           <string>Familiar</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Comercial</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Familiar Comercial</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Otro</string>
+          </property>
+         </item>
+        </widget>
+        <widget class="QLabel" name="label_24">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>80</y>
+           <width>261</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Sans Serif</family>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Materiales del Piso</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_27">
+         <property name="geometry">
+          <rect>
+           <x>650</x>
+           <y>80</y>
+           <width>281</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Sans Serif</family>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Indique N° de espacios</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_26">
+         <property name="geometry">
+          <rect>
+           <x>220</x>
+           <y>80</y>
+           <width>291</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Sans Serif</family>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Materiales del techo</string>
+         </property>
+        </widget>
+        <widget class="QWidget" name="layoutWidget">
+         <property name="geometry">
+          <rect>
+           <x>650</x>
+           <y>110</y>
+           <width>200</width>
+           <height>128</height>
+          </rect>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_6">
+          <item row="2" column="1">
+           <widget class="QLabel" name="label_32">
+            <property name="text">
+             <string>Baños</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="2">
+           <widget class="QComboBox" name="cmbCocina">
+            <item>
+             <property name="text">
+              <string>1</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>3</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>4</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>5</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>6</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLabel" name="label_30">
+            <property name="text">
+             <string>Habitaciones</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QLabel" name="label_33">
+            <property name="text">
+             <string>Cocina</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="2">
+           <widget class="QComboBox" name="cmbBanos">
+            <item>
+             <property name="text">
+              <string>2</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>3</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>4</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>5</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>6</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="1" column="2">
+           <widget class="QComboBox" name="cmbSalaComedor">
+            <item>
+             <property name="text">
+              <string>1</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>3</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>4</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>5</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>6</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLabel" name="label_31">
+            <property name="text">
+             <string>Sala, Comedor</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QComboBox" name="cmbHabitaciones">
+            <item>
+             <property name="text">
+              <string>2</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>3</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>4</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>5</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>6</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QCheckBox" name="chkJardineria">
+         <property name="geometry">
+          <rect>
+           <x>390</x>
+           <y>290</y>
+           <width>101</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Jardineria</string>
+         </property>
+        </widget>
+        <widget class="QCheckBox" name="chkTecho">
+         <property name="geometry">
+          <rect>
+           <x>390</x>
+           <y>170</y>
+           <width>111</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Techo</string>
+         </property>
+        </widget>
+        <widget class="QCheckBox" name="chkPared">
+         <property name="geometry">
+          <rect>
+           <x>390</x>
+           <y>210</y>
+           <width>111</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Pared</string>
+         </property>
+        </widget>
+        <widget class="QCheckBox" name="chkAmpliar">
+         <property name="geometry">
+          <rect>
+           <x>390</x>
+           <y>250</y>
+           <width>111</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Ampliar</string>
+         </property>
+        </widget>
+        <widget class="QCheckBox" name="chkCocina">
+         <property name="geometry">
+          <rect>
+           <x>390</x>
+           <y>270</y>
+           <width>101</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Cocina</string>
+         </property>
+        </widget>
+        <widget class="QCheckBox" name="chkFriso">
+         <property name="geometry">
+          <rect>
+           <x>390</x>
+           <y>150</y>
+           <width>131</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Friso</string>
+         </property>
+        </widget>
+        <widget class="QCheckBox" name="chkPintura">
+         <property name="geometry">
+          <rect>
+           <x>390</x>
+           <y>230</y>
+           <width>111</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Pintura</string>
+         </property>
+        </widget>
+        <widget class="QCheckBox" name="chkPiso">
+         <property name="geometry">
+          <rect>
+           <x>390</x>
+           <y>190</y>
+           <width>111</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Piso</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_34">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>150</y>
+           <width>321</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Sans Serif</family>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Que le gustaria Mejorar de su Vivienda:</string>
+         </property>
+        </widget>
+        <widget class="Line" name="line_5">
+         <property name="geometry">
+          <rect>
+           <x>630</x>
+           <y>110</y>
+           <width>21</width>
+           <height>131</height>
+          </rect>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+        </widget>
+        <widget class="Line" name="line_6">
+         <property name="geometry">
+          <rect>
+           <x>490</x>
+           <y>150</y>
+           <width>20</width>
+           <height>161</height>
+          </rect>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+        </widget>
+       </widget>
+       <widget class="Line" name="line_2">
+        <property name="geometry">
+         <rect>
+          <x>90</x>
+          <y>440</y>
+          <width>741</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab">
+       <attribute name="title">
+        <string>Salud Vacunas</string>
+       </attribute>
+       <widget class="QFrame" name="frame_7">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>70</y>
+          <width>761</width>
+          <height>141</height>
+         </rect>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <widget class="QLabel" name="label_6">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>10</y>
+           <width>601</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Ubuntu'; font-size:8pt; font-weight:600;&quot;&gt;¿Poseen los niños de su grupo familiar todas las vacunas ?&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="rbtNoTiene">
+         <property name="geometry">
+          <rect>
+           <x>130</x>
+           <y>40</y>
+           <width>261</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>No tienen las vacunas completas</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="rbtSiTienen">
+         <property name="geometry">
+          <rect>
+           <x>130</x>
+           <y>70</y>
+           <width>291</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Si tienen todas su vacunas</string>
+         </property>
+        </widget>
+        <widget class="QCheckBox" name="chbAll_ninos">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="geometry">
+          <rect>
+           <x>430</x>
+           <y>70</y>
+           <width>191</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Todos los niños</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QCheckBox" name="chbMenoresSeis">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="geometry">
+          <rect>
+           <x>430</x>
+           <y>100</y>
+           <width>201</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Menores de 6 años</string>
+         </property>
+        </widget>
+        <widget class="Line" name="line_4">
+         <property name="geometry">
+          <rect>
+           <x>410</x>
+           <y>60</y>
+           <width>3</width>
+           <height>61</height>
+          </rect>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QLabel" name="lblNotificacionSalud">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>10</y>
+          <width>761</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 1px solid Yellow;
+background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+stop: 0 #FFFF80, stop: 0.08 #FAFFD8,
+stop: 0.39999 #FEFFE5, stop: 0.4 #FEFFE5,
+stop: 0.9 #FAFFD8, stop: 1 #fff);
+
+</string>
+        </property>
+        <property name="text">
+         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Ubuntu'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_8">
+        <property name="geometry">
+         <rect>
+          <x>300</x>
+          <y>40</y>
+          <width>311</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Ubuntu'; font-size:11pt; font-weight:600; color:#00007f;&quot;&gt;Información de Vacunas&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="textFormat">
+         <enum>Qt::AutoText</enum>
+        </property>
+       </widget>
+       <widget class="QFrame" name="frame_8">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>220</y>
+          <width>761</width>
+          <height>211</height>
+         </rect>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <widget class="QLabel" name="label_9">
+         <property name="geometry">
+          <rect>
+           <x>30</x>
+           <y>10</y>
+           <width>601</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Ubuntu'; font-size:8pt; font-weight:600;&quot;&gt;De ser afirmativa su respuesta, indique que vacunas tienen:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+        <widget class="QCheckBox" name="checkBox_44">
+         <property name="geometry">
+          <rect>
+           <x>352</x>
+           <y>66</y>
+           <width>112</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Leucemia</string>
+         </property>
+        </widget>
+        <widget class="QCheckBox" name="checkBox_31">
+         <property name="geometry">
+          <rect>
+           <x>470</x>
+           <y>122</y>
+           <width>237</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Alcoholismo</string>
+         </property>
+        </widget>
+        <widget class="QCheckBox" name="checkBox_46">
+         <property name="geometry">
+          <rect>
+           <x>11</x>
+           <y>150</y>
+           <width>209</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Enfermedades resperatorias</string>
+         </property>
+        </widget>
+        <widget class="QCheckBox" name="checkBox_47">
+         <property name="geometry">
+          <rect>
+           <x>470</x>
+           <y>94</y>
+           <width>237</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Diabetes</string>
+         </property>
+        </widget>
+        <widget class="QCheckBox" name="checkBox_48">
+         <property name="geometry">
+          <rect>
+           <x>470</x>
+           <y>66</y>
+           <width>237</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Asma</string>
+         </property>
+        </widget>
+        <widget class="QCheckBox" name="checkBox_49">
+         <property name="geometry">
+          <rect>
+           <x>352</x>
+           <y>38</y>
+           <width>112</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Cáncer</string>
+         </property>
+        </widget>
+        <widget class="QCheckBox" name="checkBox_50">
+         <property name="geometry">
+          <rect>
+           <x>226</x>
+           <y>66</y>
+           <width>120</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Tensión Alta</string>
+         </property>
+        </widget>
+        <widget class="QCheckBox" name="checkBox_51">
+         <property name="geometry">
+          <rect>
+           <x>470</x>
+           <y>38</y>
+           <width>237</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Sustancias sicotropicas (Drogas)</string>
+         </property>
+        </widget>
+        <widget class="QCheckBox" name="checkBox_52">
+         <property name="geometry">
+          <rect>
+           <x>11</x>
+           <y>38</y>
+           <width>209</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Desnutrición </string>
+         </property>
+        </widget>
+        <widget class="QCheckBox" name="checkBox_53">
+         <property name="geometry">
+          <rect>
+           <x>11</x>
+           <y>94</y>
+           <width>209</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Deficultades de aprendizaje</string>
+         </property>
+        </widget>
+        <widget class="QCheckBox" name="checkBox_54">
+         <property name="geometry">
+          <rect>
+           <x>226</x>
+           <y>178</y>
+           <width>120</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Alergias</string>
+         </property>
+        </widget>
+        <widget class="QCheckBox" name="checkBox_55">
+         <property name="geometry">
+          <rect>
+           <x>352</x>
+           <y>178</y>
+           <width>112</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Covulciones</string>
+         </property>
+        </widget>
+        <widget class="QCheckBox" name="checkBox_56">
+         <property name="geometry">
+          <rect>
+           <x>11</x>
+           <y>66</y>
+           <width>209</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Sindrome de Down</string>
+         </property>
+        </widget>
+        <widget class="QCheckBox" name="checkBox_57">
+         <property name="geometry">
+          <rect>
+           <x>226</x>
+           <y>122</y>
+           <width>120</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Hernias</string>
+         </property>
+        </widget>
+        <widget class="QCheckBox" name="checkBox_58">
+         <property name="geometry">
+          <rect>
+           <x>352</x>
+           <y>150</y>
+           <width>112</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Discapasidad</string>
+         </property>
+        </widget>
+        <widget class="QCheckBox" name="checkBox_59">
+         <property name="geometry">
+          <rect>
+           <x>226</x>
+           <y>150</y>
+           <width>120</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Parasitosis</string>
+         </property>
+        </widget>
+        <widget class="QCheckBox" name="checkBox_60">
+         <property name="geometry">
+          <rect>
+           <x>226</x>
+           <y>38</y>
+           <width>120</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Meningitis</string>
+         </property>
+        </widget>
+        <widget class="QCheckBox" name="checkBox_61">
+         <property name="geometry">
+          <rect>
+           <x>11</x>
+           <y>178</y>
+           <width>209</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Infartos</string>
+         </property>
+        </widget>
+        <widget class="QCheckBox" name="checkBox_62">
+         <property name="geometry">
+          <rect>
+           <x>11</x>
+           <y>122</y>
+           <width>209</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Paralisis infantil</string>
+         </property>
+        </widget>
+        <widget class="QCheckBox" name="checkBox_63">
+         <property name="geometry">
+          <rect>
+           <x>352</x>
+           <y>122</y>
+           <width>112</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Epilesia</string>
+         </property>
+        </widget>
+        <widget class="QCheckBox" name="checkBox_64">
+         <property name="geometry">
+          <rect>
+           <x>226</x>
+           <y>94</y>
+           <width>120</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Labio Leporino</string>
+         </property>
+        </widget>
+        <widget class="QCheckBox" name="checkBox_65">
+         <property name="geometry">
+          <rect>
+           <x>352</x>
+           <y>94</y>
+           <width>112</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Hipertesión</string>
+         </property>
+        </widget>
+        <widget class="QCheckBox" name="checkBox_66">
+         <property name="geometry">
+          <rect>
+           <x>470</x>
+           <y>150</y>
+           <width>237</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Otras</string>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QFrame" name="frame_9">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>440</y>
+          <width>761</width>
+          <height>111</height>
+         </rect>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <widget class="QLabel" name="label_10">
+         <property name="geometry">
+          <rect>
+           <x>60</x>
+           <y>10</y>
+           <width>601</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Ubuntu'; font-size:8pt; font-weight:600;&quot;&gt;Algún miembro del grupo familiar requiere intervención quirurgica&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="rbtSiOperacion">
+         <property name="geometry">
+          <rect>
+           <x>30</x>
+           <y>50</y>
+           <width>105</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Si</string>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="rbtNoOperacion">
+         <property name="geometry">
+          <rect>
+           <x>30</x>
+           <y>80</y>
+           <width>105</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>No</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="txtCuantos">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="geometry">
+          <rect>
+           <x>180</x>
+           <y>50</y>
+           <width>51</width>
+           <height>27</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_38">
+         <property name="geometry">
+          <rect>
+           <x>110</x>
+           <y>50</y>
+           <width>59</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Sans Serif</family>
+           <pointsize>9</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+           <kerning>true</kerning>
+          </font>
+         </property>
+         <property name="text">
+          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Cuantos&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_39">
+         <property name="geometry">
+          <rect>
+           <x>270</x>
+           <y>50</y>
+           <width>161</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Tipo de Operación&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="txtTipoOperacion">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="geometry">
+          <rect>
+           <x>410</x>
+           <y>50</y>
+           <width>331</width>
+           <height>27</height>
+          </rect>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QFrame" name="frame_10">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>560</y>
+          <width>761</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <widget class="QLabel" name="label_40">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>10</y>
+           <width>331</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Ubuntu'; font-size:8pt; font-weight:600;&quot;&gt;¿Existe en el grupo familiar alguna persona con discapacidad?&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="rbtSiDiscapacidad">
+         <property name="geometry">
+          <rect>
+           <x>360</x>
+           <y>10</y>
+           <width>105</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Si</string>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="rbtNoDiscapacidad">
+         <property name="geometry">
+          <rect>
+           <x>470</x>
+           <y>10</y>
+           <width>105</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>No</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </widget>
+       <widget class="Line" name="line_11">
+        <property name="geometry">
+         <rect>
+          <x>830</x>
+          <y>80</y>
+          <width>20</width>
+          <height>581</height>
+         </rect>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btnModificarSalud_2">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>870</x>
+          <y>180</y>
+          <width>94</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Sans Serif</family>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+color: #333;
+border: 2px solid #555;
+border-radius: 11px;
+padding: 5px;
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #fff, stop: 1 #888);
+min-width: 80px;
+}
+
+QPushButton:hover {
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #fff, stop: 1 #bbb);
+}
+
+QPushButton:pressed {
+background: qradialgradient(cx: 0.4, cy: -0.1,
+fx: 0.4, fy: -0.1,
+radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
+}</string>
+        </property>
+        <property name="text">
+         <string>Modificar</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btnLimpiarSalud_2">
+        <property name="geometry">
+         <rect>
+          <x>870</x>
+          <y>80</y>
+          <width>94</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Sans Serif</family>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+color: #333;
+border: 2px solid #555;
+border-radius: 11px;
+padding: 5px;
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #fff, stop: 1 #888);
+min-width: 80px;
+}
+
+QPushButton:hover {
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #fff, stop: 1 #bbb);
+}
+
+QPushButton:pressed {
+background: qradialgradient(cx: 0.4, cy: -0.1,
+fx: 0.4, fy: -0.1,
+radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
+}</string>
+        </property>
+        <property name="text">
+         <string>Limpiar</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btnGuardarSalud_2">
+        <property name="geometry">
+         <rect>
+          <x>870</x>
+          <y>130</y>
+          <width>94</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Sans Serif</family>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+color: #333;
+border: 2px solid #555;
+border-radius: 11px;
+padding: 5px;
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #fff, stop: 1 #888);
+min-width: 80px;
+}
+
+QPushButton:hover {
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #fff, stop: 1 #bbb);
+}
+
+QPushButton:pressed {
+background: qradialgradient(cx: 0.4, cy: -0.1,
+fx: 0.4, fy: -0.1,
+radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
+}</string>
+        </property>
+        <property name="text">
+         <string>Guardar</string>
+        </property>
+       </widget>
+       <widget class="Line" name="line_12">
+        <property name="geometry">
+         <rect>
+          <x>850</x>
+          <y>230</y>
+          <width>121</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="bienestar">
+       <attribute name="title">
+        <string>&amp;Bienestar</string>
+       </attribute>
+       <widget class="QLabel" name="label_7">
+        <property name="geometry">
+         <rect>
+          <x>390</x>
+          <y>50</y>
+          <width>171</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Ubuntu'; font-size:11pt; font-weight:600; color:#00007f;&quot;&gt;Servicios Básicos&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="textFormat">
+         <enum>Qt::AutoText</enum>
+        </property>
+       </widget>
+       <widget class="QWidget" name="layoutWidget_4">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>80</y>
+          <width>395</width>
+          <height>207</height>
+         </rect>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_29">
+         <item row="0" column="1">
+          <widget class="QLabel" name="label_54">
+           <property name="font">
+            <font>
+             <family>Sans Serif</family>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Aguas Blancas</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <widget class="QComboBox" name="cmbAguasBlancas_2">
+           <item>
+            <property name="text">
+             <string>Acueducto</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Pila Publica</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Camion Sisterna</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Otros</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLabel" name="label_55">
+           <property name="font">
+            <font>
+             <family>Sans Serif</family>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Aguas Servidas</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="2">
+          <widget class="QComboBox" name="cmbAguasServidas_2">
+           <item>
+            <property name="text">
+             <string>Cloacas</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Letrinas</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Pozo Septico</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Otros</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QLabel" name="label_56">
+           <property name="font">
+            <font>
+             <family>Sans Serif</family>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Gas</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="2">
+          <widget class="QComboBox" name="cmbGas_2">
+           <item>
+            <property name="text">
+             <string>Bombona </string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Tuberia</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>No Posee</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Otros</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QLabel" name="label_57">
+           <property name="font">
+            <font>
+             <family>Sans Serif</family>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Sistema Eléctrico</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="2">
+          <widget class="QComboBox" name="cmbSistemaElectrico_2">
+           <item>
+            <property name="text">
+             <string>Electrificado Publico</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Planta Electrica</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Medidor</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Otros</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="QLabel" name="label_58">
+           <property name="font">
+            <font>
+             <family>Sans Serif</family>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Recolección de Basura</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="2">
+          <widget class="QComboBox" name="cmbRecoleccionBasura_2">
+           <item>
+            <property name="text">
+             <string>Aseo Urbano</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Container</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Camion</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Otros</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <spacer name="horizontalSpacer_21">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="2" column="3">
+          <spacer name="horizontalSpacer_22">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="5" column="1">
+          <spacer name="verticalSpacer_17">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </widget>
+       <widget class="Line" name="line_7">
+        <property name="geometry">
+         <rect>
+          <x>450</x>
+          <y>100</y>
+          <width>20</width>
+          <height>171</height>
+         </rect>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_59">
+        <property name="geometry">
+         <rect>
+          <x>482</x>
+          <y>130</y>
+          <width>172</width>
+          <height>27</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Sans Serif</family>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Transporte</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="cmbTelefonia_2">
+        <property name="geometry">
+         <rect>
+          <x>720</x>
+          <y>97</y>
+          <width>111</width>
+          <height>27</height>
+         </rect>
+        </property>
+        <item>
+         <property name="text">
+          <string>Domiciliaria</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>No Posee</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Prepago</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Otros</string>
+         </property>
+        </item>
+       </widget>
+       <widget class="QComboBox" name="cmbMecanismosInformacion_2">
+        <property name="geometry">
+         <rect>
+          <x>720</x>
+          <y>163</y>
+          <width>111</width>
+          <height>27</height>
+         </rect>
+        </property>
+        <item>
+         <property name="text">
+          <string>Television</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Internet</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Radio</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Prensa</string>
+         </property>
+        </item>
+       </widget>
+       <widget class="QLabel" name="label_60">
+        <property name="geometry">
+         <rect>
+          <x>482</x>
+          <y>97</y>
+          <width>172</width>
+          <height>27</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Sans Serif</family>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Telefonía</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_61">
+        <property name="geometry">
+         <rect>
+          <x>482</x>
+          <y>163</y>
+          <width>241</width>
+          <height>27</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Sans Serif</family>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Mecanismo de información</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="cmbTransporte_2">
+        <property name="geometry">
+         <rect>
+          <x>720</x>
+          <y>130</y>
+          <width>111</width>
+          <height>27</height>
+         </rect>
+        </property>
+        <item>
+         <property name="text">
+          <string>Publico</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Propio</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Taxi</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Otros</string>
+         </property>
+        </item>
+       </widget>
+       <widget class="QLabel" name="label_62">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>290</y>
+          <width>819</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Sans Serif</family>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Ṕarticipación Comunitaria</string>
+        </property>
+       </widget>
+       <widget class="QWidget" name="layoutWidget_5">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>310</y>
+          <width>891</width>
+          <height>124</height>
+         </rect>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_30">
+         <item row="0" column="1">
+          <widget class="QLabel" name="label_63">
+           <property name="text">
+            <string>Existe organización comunitarios</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <spacer name="horizontalSpacer_23">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLabel" name="label_64">
+           <property name="text">
+            <string>Participa el Jefe de Familia</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="4">
+          <spacer name="horizontalSpacer_24">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="2" column="1">
+          <widget class="QLabel" name="label_65">
+           <property name="text">
+            <string>Participa un miembro de la familia</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="3">
+          <spacer name="verticalSpacer_18">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>17</width>
+             <height>38</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="1" column="2">
+          <widget class="QComboBox" name="cmbPaticipaJefe_2">
+           <item>
+            <property name="text">
+             <string>No Participa</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>En Asociaciones de Vecinos</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>En Consejos Comunales</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="2" column="2">
+          <widget class="QComboBox" name="cmbParticipaMiembro_2">
+           <item>
+            <property name="text">
+             <string>No Participan</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>En Asociaciones de Vecinos</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>En Consejos Comunales</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <widget class="QComboBox" name="cmbOrgComunitaria_2">
+           <item>
+            <property name="text">
+             <string>No Existe</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Asociacion de Vecinos</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Consejo Comunal</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QPushButton" name="btnGuardarBienestar_2">
+        <property name="geometry">
+         <rect>
+          <x>870</x>
+          <y>20</y>
+          <width>94</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Sans Serif</family>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+color: #333;
+border: 2px solid #555;
+border-radius: 11px;
+padding: 5px;
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #fff, stop: 1 #888);
+min-width: 80px;
+}
+
+QPushButton:hover {
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #fff, stop: 1 #bbb);
+}
+
+QPushButton:pressed {
+background: qradialgradient(cx: 0.4, cy: -0.1,
+fx: 0.4, fy: -0.1,
+radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
+}</string>
+        </property>
+        <property name="text">
+         <string>Guardar</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btnLimpiarBienestar_2">
+        <property name="geometry">
+         <rect>
+          <x>870</x>
+          <y>80</y>
+          <width>94</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Sans Serif</family>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+color: #333;
+border: 2px solid #555;
+border-radius: 11px;
+padding: 5px;
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #fff, stop: 1 #888);
+min-width: 80px;
+}
+
+QPushButton:hover {
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #fff, stop: 1 #bbb);
+}
+
+QPushButton:pressed {
+background: qradialgradient(cx: 0.4, cy: -0.1,
+fx: 0.4, fy: -0.1,
+radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
+}</string>
+        </property>
+        <property name="text">
+         <string>Limpiar</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btnModificarBienestar">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>870</x>
+          <y>130</y>
+          <width>94</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Sans Serif</family>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+color: #333;
+border: 2px solid #555;
+border-radius: 11px;
+padding: 5px;
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #fff, stop: 1 #888);
+min-width: 80px;
+}
+
+QPushButton:hover {
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #fff, stop: 1 #bbb);
+}
+
+QPushButton:pressed {
+background: qradialgradient(cx: 0.4, cy: -0.1,
+fx: 0.4, fy: -0.1,
+radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
+}</string>
+        </property>
+        <property name="text">
+         <string>Modificar</string>
+        </property>
+       </widget>
+       <widget class="Line" name="line_9">
+        <property name="geometry">
+         <rect>
+          <x>850</x>
+          <y>0</y>
+          <width>16</width>
+          <height>191</height>
+         </rect>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+       </widget>
+       <widget class="Line" name="line_8">
+        <property name="geometry">
+         <rect>
+          <x>860</x>
+          <y>120</y>
+          <width>118</width>
+          <height>3</height>
+         </rect>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+       <widget class="Line" name="line_10">
+        <property name="geometry">
+         <rect>
+          <x>860</x>
+          <y>70</y>
+          <width>118</width>
+          <height>3</height>
+         </rect>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+       <widget class="QFrame" name="frame_6">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>460</y>
+          <width>771</width>
+          <height>111</height>
+         </rect>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <widget class="QLabel" name="label_4">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>10</y>
+           <width>181</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Ubuntu'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans'; font-size:10pt; font-weight:600;&quot;&gt;Observaciones&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+        <widget class="QPlainTextEdit" name="txteObservaciones_2">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>30</y>
+           <width>731</width>
+           <height>66</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_5">
+         <property name="geometry">
+          <rect>
+           <x>160</x>
+           <y>10</y>
+           <width>601</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Ubuntu'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;(Introduzca un descripción de los servicios en la comunidad que sean necesarios o requieran mejoras)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QLabel" name="lblNotificacionBienestar">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>10</y>
+          <width>811</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 1px solid Yellow;
+background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+stop: 0 #FFFF80, stop: 0.08 #FAFFD8,
+stop: 0.39999 #FEFFE5, stop: 0.4 #FEFFE5,
+stop: 0.9 #FAFFD8, stop: 1 #fff);
+
+</string>
+        </property>
+        <property name="text">
+         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Ubuntu'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>986</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_administracion">
+    <property name="title">
+     <string>&amp;Administración</string>
+    </property>
+    <addaction name="separator"/>
+    <addaction name="actionConcejoComunal"/>
+    <addaction name="actionGestionar_Consejos_Comunales"/>
+    <addaction name="actionIndicadores"/>
+   </widget>
+   <widget class="QMenu" name="menu_Herramientas">
+    <property name="title">
+     <string>&amp;Herramientas</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu_Ayuda">
+    <property name="title">
+     <string>&amp;Ayuda</string>
+    </property>
+    <addaction name="actionAcerca_de_Komunal"/>
+    <addaction name="actionManual_Komunal"/>
+   </widget>
+   <widget class="QMenu" name="menu_Familias">
+    <property name="title">
+     <string>&amp;Familias</string>
+    </property>
+    <addaction name="actionListado"/>
+    <addaction name="actionIngresar_Nucleo_Familiar"/>
+    <addaction name="actionListado_Familias"/>
+   </widget>
+   <widget class="QMenu" name="menu_Archivo">
+    <property name="title">
+     <string>&amp;Archivo</string>
+    </property>
+    <addaction name="actionExportar_Base_de_Datos"/>
+    <addaction name="separator"/>
+    <addaction name="actionSalir"/>
+   </widget>
+   <addaction name="menu_Archivo"/>
+   <addaction name="menu_administracion"/>
+   <addaction name="menu_Familias"/>
+   <addaction name="menu_Herramientas"/>
+   <addaction name="menu_Ayuda"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="action_Nuevo">
+   <property name="text">
+    <string>&amp;Nuevo</string>
+   </property>
+  </action>
+  <action name="actionA_brir">
+   <property name="text">
+    <string>A&amp;brir</string>
+   </property>
+  </action>
+  <action name="action_Guardar">
+   <property name="text">
+    <string>&amp;Guardar</string>
+   </property>
+  </action>
+  <action name="action_Salir">
+   <property name="text">
+    <string>&amp;Salir</string>
+   </property>
+   <property name="toolTip">
+    <string>Salir de Komunal</string>
+   </property>
+  </action>
+  <action name="actionAcerca_de_Komunal">
+   <property name="text">
+    <string>Acerca de Komunal</string>
+   </property>
+  </action>
+  <action name="actionListado">
+   <property name="text">
+    <string>Gestión Familias</string>
+   </property>
+  </action>
+  <action name="actionIngresar_Nucleo_Familiar">
+   <property name="text">
+    <string>Ingresar Nucleo Familiar</string>
+   </property>
+  </action>
+  <action name="actionConcejoComunal">
+   <property name="text">
+    <string>Consejo Comunal</string>
+   </property>
+  </action>
+  <action name="actionGestionar_Consejos_Comunales">
+   <property name="text">
+    <string>Gestionar Consejos Comunales</string>
+   </property>
+  </action>
+  <action name="actionManual_Komunal">
+   <property name="text">
+    <string>Manual Komunal</string>
+   </property>
+  </action>
+  <action name="actionIndicadores">
+   <property name="text">
+    <string>Indicadores</string>
+   </property>
+  </action>
+  <action name="actionExportar_Base_de_Datos">
+   <property name="text">
+    <string>Exportar Base de Datos</string>
+   </property>
+  </action>
+  <action name="actionSalir">
+   <property name="text">
+    <string>Salir</string>
+   </property>
+  </action>
+  <action name="actionListado_Familias">
+   <property name="text">
+    <string>Listado Familias</string>
+   </property>
+  </action>
+ </widget>
+ <tabstops>
+  <tabstop>txtNombrejefe</tabstop>
+  <tabstop>txtApellidojefe</tabstop>
+  <tabstop>txtCedulaJefe</tabstop>
+  <tabstop>cmbSexoJefe</tabstop>
+  <tabstop>cmbNacionalidadJefe</tabstop>
+  <tabstop>cmbEdoCivilJefe</tabstop>
+  <tabstop>cmbLugarNacimientoJefe</tabstop>
+  <tabstop>txtFechaNacJefe</tabstop>
+  <tabstop>txtOcupacionJefe</tabstop>
+  <tabstop>txtIngresoJefe</tabstop>
+  <tabstop>cmbGradoInstruccion</tabstop>
+  <tabstop>btnModificarJefeFamilia</tabstop>
+  <tabstop>btnGuardarJefeFamilia</tabstop>
+  <tabstop>Limpiar_datos_jefe</tabstop>
+  <tabstop>lblParentescoF1</tabstop>
+  <tabstop>cmbEdoCivilF1</tabstop>
+  <tabstop>cmbInstruccionF1</tabstop>
+  <tabstop>lblOcupacionF1</tabstop>
+  <tabstop>lblIngresoF1</tabstop>
+  <tabstop>lblNombreF2</tabstop>
+  <tabstop>lblApellidoF2</tabstop>
+  <tabstop>lblCedulaF2</tabstop>
+  <tabstop>lblParentescoF2</tabstop>
+  <tabstop>cmbEdoCivilF2</tabstop>
+  <tabstop>cmbInstruccionF2</tabstop>
+  <tabstop>lblOcupacionF2</tabstop>
+  <tabstop>lblIngresoF2</tabstop>
+  <tabstop>lblNombreF3</tabstop>
+  <tabstop>lblApellidoF3</tabstop>
+  <tabstop>lblCedulaF3</tabstop>
+  <tabstop>lblParentescoF3</tabstop>
+  <tabstop>cmbEdoCivilF3</tabstop>
+  <tabstop>cmbInstruccionF3</tabstop>
+  <tabstop>lblOcupacionF3</tabstop>
+  <tabstop>lblIngresoF3</tabstop>
+  <tabstop>lblNombreF4</tabstop>
+  <tabstop>lblApellidoF4</tabstop>
+  <tabstop>lblCedulaF4</tabstop>
+  <tabstop>lblParentescoF4</tabstop>
+  <tabstop>cmbEdoCivilF4</tabstop>
+  <tabstop>cmbInstruccionF4</tabstop>
+  <tabstop>lblOcupacionF4</tabstop>
+  <tabstop>lblIngresoF4</tabstop>
+  <tabstop>lblNombreF5</tabstop>
+  <tabstop>lblApellidoF5</tabstop>
+  <tabstop>lblCedulaF5</tabstop>
+  <tabstop>lblParentescoF5</tabstop>
+  <tabstop>cmbEdoCivilF5</tabstop>
+  <tabstop>cmbInstruccionF5</tabstop>
+  <tabstop>lblOcupacionF5</tabstop>
+  <tabstop>lblIngresoF5</tabstop>
+  <tabstop>lblNombreF6</tabstop>
+  <tabstop>lblApellidoF6</tabstop>
+  <tabstop>lblCedulaF6</tabstop>
+  <tabstop>lblParentescoF6</tabstop>
+  <tabstop>cmbEdoCivilF6</tabstop>
+  <tabstop>cmbInstruccionF6</tabstop>
+  <tabstop>lblOcupacionF6</tabstop>
+  <tabstop>lblIngresoF6</tabstop>
+  <tabstop>lblNombreF7</tabstop>
+  <tabstop>lblApellidoF7</tabstop>
+  <tabstop>lblCedulaF7</tabstop>
+  <tabstop>lblParentescoF7</tabstop>
+  <tabstop>cmbEdoCivilF7</tabstop>
+  <tabstop>cmbInstruccionF7</tabstop>
+  <tabstop>lblOcupacionF7</tabstop>
+  <tabstop>lblIngresoF7</tabstop>
+  <tabstop>lblNombreF8</tabstop>
+  <tabstop>lblApellidoF8</tabstop>
+  <tabstop>lblCedulaF8</tabstop>
+  <tabstop>lblParentescoF8</tabstop>
+  <tabstop>cmbEdoCivilF8</tabstop>
+  <tabstop>cmbInstruccionF8</tabstop>
+  <tabstop>lblOcupacionF8</tabstop>
+  <tabstop>lblIngresoF8</tabstop>
+  <tabstop>lblNombreF9</tabstop>
+  <tabstop>lblApellidoF9</tabstop>
+  <tabstop>lblCedulaF9</tabstop>
+  <tabstop>lblParentescoF9</tabstop>
+  <tabstop>cmbEdoCivilF9</tabstop>
+  <tabstop>cmbInstruccionF9</tabstop>
+  <tabstop>lblOcupacionF9</tabstop>
+  <tabstop>lblIngresoF9</tabstop>
+  <tabstop>cmbHabitaciones</tabstop>
+  <tabstop>cmbSalaComedor</tabstop>
+  <tabstop>cmbBanos</tabstop>
+  <tabstop>cmbCocina</tabstop>
+  <tabstop>lblNombreF1</tabstop>
+  <tabstop>lblCedulaF1</tabstop>
+  <tabstop>lblApellidoF1</tabstop>
+  <tabstop>cmbTipoVivienda</tabstop>
+  <tabstop>chkTecho</tabstop>
+  <tabstop>chkPiso</tabstop>
+  <tabstop>chkFriso</tabstop>
+  <tabstop>chkPared</tabstop>
+  <tabstop>chkPintura</tabstop>
+  <tabstop>chkAmpliar</tabstop>
+  <tabstop>chkCocina</tabstop>
+  <tabstop>chkJardineria</tabstop>
+  <tabstop>cmbMaterialTecho</tabstop>
+  <tabstop>cmbEstadoVivienda</tabstop>
+  <tabstop>cmbTenencia</tabstop>
+  <tabstop>cmbMaterialPared</tabstop>
+  <tabstop>cmbUsoVivienda</tabstop>
+  <tabstop>cmbMaterialPiso</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>btnSalirKomunal</sender>
+   <signal>clicked()</signal>
+   <receiver>Censo_socioeconomico</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>767</x>
+     <y>670</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>481</x>
+     <y>392</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rbtSiTienen</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>chbAll_ninos</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>302</x>
+     <y>226</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>484</x>
+     <y>229</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rbtSiTienen</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>chbMenoresSeis</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>319</x>
+     <y>235</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>494</x>
+     <y>255</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rbtNoTiene</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>chbAll_ninos</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>232</x>
+     <y>200</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>484</x>
+     <y>219</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rbtNoTiene</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>chbMenoresSeis</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>317</x>
+     <y>206</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>495</x>
+     <y>259</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rbtSiTienen</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>frame_8</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>206</x>
+     <y>229</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>140</x>
+     <y>308</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rbtNoTiene</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>frame_8</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>193</x>
+     <y>196</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>92</x>
+     <y>310</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rbtSiOperacion</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>txtCuantos</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>111</x>
+     <y>597</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>248</x>
+     <y>589</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rbtSiOperacion</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>txtTipoOperacion</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>158</x>
+     <y>600</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>471</x>
+     <y>597</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rbtNoOperacion</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>txtCuantos</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>103</x>
+     <y>624</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>236</x>
+     <y>602</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rbtNoOperacion</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>txtTipoOperacion</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>170</x>
+     <y>623</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>466</x>
+     <y>598</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

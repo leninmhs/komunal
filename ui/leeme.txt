@@ -1,0 +1,3 @@
+Generar los .py a partir de los .ui generados con qtdesigner4
+
+$pyuic4 ui/familias.ui -o familias.py
