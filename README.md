@@ -14,6 +14,9 @@ Komunal esta escrito en Python, usando libreria grafica QT4 y base de datos SQLi
     $ cd komunal
     $ python inicial.py
 
+Usuario: leninmhs 
+Clave:   123456
+
 ##Licencia
 Este programa está distribuido bajo los términos de GPL v2.
 
