@@ -45,7 +45,7 @@ class MyForm(QtGui.QMainWindow):
 	    self.ui.setupUi(self)
 	    self.login = DlgBienvenida()
 	    self.login.show()
-	    
+
 	    self.login.ui.txtUsuario.setFocus()
 	    self.connect(self.login.ui.btnLoginAceptar, QtCore.SIGNAL('clicked()'),self.validarLogin)
 	    self.connect(self.login.ui.btnRegistroLogin, QtCore.SIGNAL('clicked()'),self.frmConcejoComunal)
@@ -70,7 +70,7 @@ class MyForm(QtGui.QMainWindow):
 
 
 
-	    
+
 	    self.ui.lblNombreConsejo.setText( "Consejo Comunal: " + self.dbconn.execute("select nombre_consejo from consejo_comunal where id_consejo= " + str(gidconsejo) ).fetchone()[0])
 	    self.ui.lblUsuarioAutenticado.setText( "Usuario: " + self.dbconn.execute("select nombre_completo from usuario where id_usuario= " + str(gidusuario) ).fetchone()[0])
 	    self.ui.lblUsuarioAutenticado.setAlignment(QtCore.Qt.AlignRight)
@@ -104,7 +104,7 @@ class MyForm(QtGui.QMainWindow):
     def actualizarGrid(self):
 	    rows = 0
 	    self.ui.tableWidget.clearContents()
-		
+
 	    global gidconsejo
 	    global gidusuario
 	    sql = "select id,cedula,nombre,apellido,fecha_nacimiento, case when sexo='F' then 'Femenino'  else 'Masculino'   end  as sexo, (Date('now') -fecha_nacimiento) as edad  from familia where jefe_familia = 'S' and co_consejo = '"+ str(gidconsejo) +"' order by id desc"
@@ -153,7 +153,7 @@ class MyForm(QtGui.QMainWindow):
 	from reportlab.platypus import Spacer, SimpleDocTemplate, Table, TableStyle
 	from reportlab.platypus import Paragraph, Image
 	from reportlab.lib import colors
-	
+
 	pdf_x_familia = QtGui.QFileDialog.getSaveFileName(self, "Guardar Planilla Komunal (*.pdf)", QtCore.QDir.homePath() + "/familia-" + str(self.ui.tableWidget.item(self.ui.tableWidget.currentRow(), 1).text()) + ".pdf", "Documento PDF (*.pdf)")
 	styleSheet=getSampleStyleSheet()
 	story=[]
@@ -164,10 +164,10 @@ class MyForm(QtGui.QMainWindow):
 	h2=styleSheet['Heading2']
 	h2.pageBreakBefore=0
 	h2.keepWithNext=1
-	
+
 	img=Image("img/logo_pdf_barra.png",580,70)
 	img.hAlign = "LEFT"
-	
+
 	texto_principal = ""
 	estilo_texto = ParagraphStyle('',
 		        fontSize = 22,
@@ -182,7 +182,7 @@ class MyForm(QtGui.QMainWindow):
 	             fontSize = 20,
 		     textColor = '#000',
 		     leftIndent = 200,
-		     rightIndent = 50) 
+		     rightIndent = 50)
 
 	style_barra= ParagraphStyle('',
 		     fontSize = 13,
@@ -200,7 +200,7 @@ class MyForm(QtGui.QMainWindow):
 
 	h = Paragraph( texto_principal, estilo_texto)
 	banner = [ [ img , h ] ]
-	
+
 	ban = Table( banner, colWidths=300 )
 	ban.setStyle([ ('ALIGN',(0,0),(0,0),'LEFT'),('ALIGN',(0,0),(1,0),'LEFT'), ('VALIGN',(0,0),(1,0),'TOP'),
 			('TEXTCOLOR',(0,1),(0,-1), colors.blue) ])
@@ -210,7 +210,7 @@ class MyForm(QtGui.QMainWindow):
 	dia = time.localtime()
 	mes = dia.tm_mon
 	mes_sp = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre','Octubre', 'Noviembre', 'Diciembre']
- 
+
 	hoy='%s %d' % (mes_sp[mes-1], dia.tm_year)
 	P= Paragraph(hoy,style_fecha)
 	story.append(P)
@@ -226,9 +226,9 @@ class MyForm(QtGui.QMainWindow):
 
 
 	style=styleSheet['BodyText']
-	
+
 	consejo = self.dbconn.execute("select * from consejo_comunal where id_consejo=1").fetchone()
-	
+
 	data_consejo = [['Consejo Comnual: ', consejo[2] ],
 			['Estado' ,'Municipio:' , 'Parroquia:', 'Sector: ' ],
 			[ consejo[3], consejo[4] , consejo[5] , consejo[6]] ,
@@ -236,12 +236,12 @@ class MyForm(QtGui.QMainWindow):
 	c=Table(data_consejo, colWidths=148)
 	c.setStyle([  ('INNERGRID', (0,0), (-1,-1), 0.25, colors.black),
 		      ('BOX', (0,0), (-1,-1), 0.25, colors.black), ('SPAN',(1,3),(3,3)), ('SPAN',(1,0),(-1,0))
-		   ])	
+		   ])
 	story.append(c)
-	story.append(Spacer(0,15))	
-	
-	
-	
+	story.append(Spacer(0,15))
+
+
+
 	jefe = self.dbconn.execute("SELECT *, (Date('now') -fecha_nacimiento) as edad FROM familia where id_grupo= 1 AND jefe_familia= 'S'").fetchone()
 
 	PO = Paragraph('''<font size=12> <b> Jefe de Familia</b></font>''',styleSheet["BodyText"])
@@ -254,9 +254,9 @@ class MyForm(QtGui.QMainWindow):
 	datos_jefe = [[ Paragraph('''<font size=12> <b> Jefe de Familia</b></font>''',styleSheet["BodyText"]) ],
 		    ['Cedula: ', jefe[12]+jefe[4], 'Apellidos y Nombres: ' , str(jefe[2])+ ' ' + str(jefe[3]) , 'Sexo: ', sexoJefe ],
 		    [ 'Lugar de Nacimiento: ',jefe[12] , 'Fecha Nacimiento: ', jefe[5], 'Edad: ', jefe[19] ],
-		    ['Edo Civil: ',jefe[11], 'Ingreso Mensual: ', ingreso , 'Grado de Instrucción', jefe[10] ], 
+		    ['Edo Civil: ',jefe[11], 'Ingreso Mensual: ', ingreso , 'Grado de Instrucción', jefe[10] ],
 		    ['Ocupación: ', jefe[8]] ]
-	
+
 	colwidths = (100, 90, 100, 90, 110, 100)
 	j = Table( datos_jefe, colwidths )
 	j.setStyle([ ('INNERGRID', (0,0), (-1,-1), 0.25, colors.black),
@@ -266,7 +266,7 @@ class MyForm(QtGui.QMainWindow):
 
 	self.dbconn.execute("SELECT *, (Date('now') -fecha_nacimiento) as edad FROM familia where id_grupo= 1 AND jefe_familia= 'N'")
 	rs = self.dbconn.fetchall()
-	
+
 	integrantes = [[Paragraph('''<font size=12> <b> Integrantes del grupo familiar</b></font>''',styleSheet["BodyText"])],
 			['Cedula', 'Nombre/Apellido', 'Parentesco', 'Sexo', 'Edad', 'Edo Civil' , 'Instrucción', 'Ocupación','Ingreso']]
 	for familia in rs:
@@ -274,42 +274,42 @@ class MyForm(QtGui.QMainWindow):
 		    ingreso = "N/P"
 		else:
 		    ingreso = familia[9] + " Bs. "
-		    
+
 		integrantes.append([str(familia[4]), str(familia[2])+ " " + str(familia[3]), str(familia[7]), str(familia[6]), str(familia[19]),str(familia[11]), str(familia[10]), str(familia[8]), ingreso ])
-	
+
 	t=Table(integrantes, (55,150, 60, 35, 35, 50, 80, 80, 45))
-		
+
 	t.setStyle([ ('INNERGRID', (0,0), (-1,-1), 0.25, colors.black),
 	('BOX', (0,0), (-1,-1), 0.25, colors.black), ('SPAN',(0,0),(8,0))
 	 ])
-	
+
 	story.append(t)
 	story.append(Spacer(0,15))
 
-	
-	
+
+
 	vivienda = self.dbconn.execute("SELECT * FROM vivienda where id_grupo= 1").fetchone()
 
 	datos_vivienda = [[ Paragraph('''<font size=12><b>Características de la vivienda</b></font>''',styleSheet["BodyText"]) ],
 		    ['Tipo de Vivienda: ', vivienda[2], 'Estado de la Vivienda: ' , vivienda[3] , 'Tenencia: ', vivienda[4] ],
 		    ['Material del Piso: ',vivienda[5] , 'Material de Paredes: ', vivienda[6] ],
-		    ['Material Techo: ', vivienda[7],'Habitaciones: ',vivienda[8], 'Sala Comedor: ', vivienda[9] ], 
+		    ['Material Techo: ', vivienda[7],'Habitaciones: ',vivienda[8], 'Sala Comedor: ', vivienda[9] ],
 		    ['Baños', vivienda[10] , 'Cocina: ', vivienda[11], 'Uso de Vivienda: ', vivienda[12]],
 		    ['Le gustaria Mejorar: ', vivienda[13]] ]
-	
+
 	v=Table(datos_vivienda, (100,100, 110, 100, 90, 90))
 	v.setStyle([ ('INNERGRID', (0,0), (-1,-1), 0.25, colors.black),
 	('BOX', (0,0), (-1,-1), 0.25, colors.black),('SPAN',(0,0),(5,0)),('SPAN',(3,2),(5,2)),('SPAN',(1,5),(5,5))
 	 ])
 	story.append(v)
-	story.append(Spacer(0,15))	
-	
+	story.append(Spacer(0,15))
+
 
 	salud = self.dbconn.execute("SELECT * FROM salud_bienestar where id_familia = 1").fetchone()
 	vacuna = "Si" if salud[2] == "S" else "No"
 	datos_salud = [[ Paragraph('''<font size=12><b>Salud y Bienestar</b></font>''',styleSheet["BodyText"]) ],
 		    ['Los Niños estan vacunados: '+ str(salud[2]), '', 'Solo menores de seis(6) años : ' + str(salud[3]),  '', 'Todos: ' + salud[4], '' ] ]
-	
+
 	datos_salud.append( ['De las siguientes vacunas cuales tiene la seguridad de haberles suministrado:' ])
 
 	self.dbconn.execute("SELECT desc_vacuna, id_salud FROM tipos_vacuna LEFT OUTER JOIN vacuna  ON tipos_vacuna.id_tipo_vacuna = vacuna.id_tipo_vacuna")
@@ -317,7 +317,7 @@ class MyForm(QtGui.QMainWindow):
 	a = 1
 	i = 3
 	fila = ""
-	
+
 	for vacuna in rs:
 	    si_no = "X" if vacuna[1] else ""
 	    fila = fila + vacuna[0] + ","+ si_no + ","
@@ -327,8 +327,8 @@ class MyForm(QtGui.QMainWindow):
 		datos_salud.append(  fila )
 		fila = ""
 	    a = a + 1
-	
-	
+
+
 	datos_salud.append( ['Algunos de los miembros de la familia a presentado problemas de:' ])
 
 	self.dbconn.execute("SELECT desc_enfermedad, id_salud FROM tipo_enfermedad LEFT OUTER JOIN enfermedad  ON tipo_enfermedad.id_tipo_enfermedad = enfermedad.id_tipo_enfermedad where activa='s'")
@@ -336,7 +336,7 @@ class MyForm(QtGui.QMainWindow):
 	a = 1
 	i = 3
 	fila = ""
-	
+
 	for enfermedad in rs:
 	    si_no = "X" if enfermedad[1] else ""
 	    fila = fila + enfermedad[0] + ","+ si_no + ","
@@ -346,32 +346,32 @@ class MyForm(QtGui.QMainWindow):
 		datos_salud.append(  fila )
 		fila = ""
 	    a = a + 1
-	
+
 	v=Table(datos_salud, (120,90, 110, 90, 90, 90))
 	v.setStyle([ ('INNERGRID', (0,0), (-1,-1), 0.25, colors.black),	('BOX', (0,0), (-1,-1), 0.25, colors.black),
 	    ('SPAN',(0,0),(5,0)), ('SPAN',(0,1),(1,1)), ('SPAN',(2,1),(3,1)),('SPAN',(4,1),(5,1)), ('SPAN',(0,2),(5,2)),('SPAN',(0,6),(5,6)) ])
 
 
 	story.append(v)
-	story.append(Spacer(0,25))		
+	story.append(Spacer(0,25))
 
 
-	
+
 	servicios = self.dbconn.execute("SELECT * FROM servicios_publicos where familia = 1").fetchone()
 
 	serv_publicos = [[ Paragraph('''<font size=12><b>Servicios Publicos Existentes</b></font>''',styleSheet["BodyText"]) ],
 		    ['Aguas Blancas: ', servicios[1], 'Aguas Servidas: ' , servicios[2] , 'Gas: ', servicios[3] ],
 		    ['Sistema Electrico: ',servicios[4] , 'Recolección de Basura: ', servicios[5] ],
 		    ['Otros Servicios: '],
-		    ['Telefonía: ', servicios[6],'Transporte: ',servicios[7] ], 
+		    ['Telefonía: ', servicios[6],'Transporte: ',servicios[7] ],
 		    ['Mecanismos de Información: ', '', servicios[8] ] ]
-	
+
 	s=Table(serv_publicos, (90,100, 115, 100, 90, 90))
 	s.setStyle([ ('INNERGRID', (0,0), (-1,-1), 0.25, colors.black),
 	('BOX', (0,0), (-1,-1), 0.25, colors.black),('SPAN',(0,0),(5,0)),('SPAN',(0,3),(5,3)),('SPAN',(0,5),(1,5)) ,('SPAN',(2,5),(5,5)) ])
 	story.append(s)
 	story.append(Spacer(0,15))
-	
+
 	par_comunitaria = [[ Paragraph('''<font size=12><b>Participacion Comunitaria</b></font>''',styleSheet["BodyText"]) ],
 		    ['Existe organización Comunitaria: ', servicios[9] ],
 		    ['Participación del jefe de familia: ', servicios[13] ],
@@ -381,15 +381,15 @@ class MyForm(QtGui.QMainWindow):
 	('BOX', (0,0), (-1,-1), 0.25, colors.black),('SPAN',(0,0),(1,0)) ])
 	story.append(s)
 	story.append(Spacer(0,15))
-	
-	doc=SimpleDocTemplate(pdf_x_familia, pagesize=letter,leftMargin=10, rightMargin=10, topMargin=10, bottomMargin=10,
+
+	doc=SimpleDocTemplate(unicode( pdf_x_familia, "utf-8"), pagesize=letter,leftMargin=10, rightMargin=10, topMargin=10, bottomMargin=10,
 			      title="Komunal - Planilla Familiar", author= "Komunal Beta" )
 	doc.build( story )
 	self.funciones.generar_log(self, "Se genero planilla pdf de familia = "+ str(self.ui.tableWidget.item(self.ui.tableWidget.currentRow(), 1).text()) + " el usuario lo guardo en: " + pdf_x_familia )
 
-    
-  
-    
+
+
+
 
     def	generarPlanillaFamilia2(self):
 	self.dbconn.execute("SELECT * FROM familia where id_grupo= " + str( self.ui.tableWidget.item(self.ui.tableWidget.currentRow(), 0).text() ) +" AND jefe_familia= 'N'")
@@ -413,21 +413,21 @@ class MyForm(QtGui.QMainWindow):
 	pdf.drawString(80,703,'NOMBRES:')
 	pdf.line(120,700,580,700)
 	pdf.drawString(120,703,"LENIN HERNANDEZ")
-	
+
 	pdf.drawString(20, 530, 'Nombre / Apellido')
 	pdf.drawString(120, 530, 'C.I')
 	pdf.drawString(190, 530, 'Edad')
 
 	y = 500
-	
+
 	for familia in rs:
 	    print str(y) + str(familia[2]) + str(familia[3])
 	    pdf.line(120,700,395,148)
-	    
+
 	    pdf.drawString(20, y, str(familia[2]) + " " + str(familia[3]) )
 	    pdf.drawString(120, y, str(familia[4]))
 	    pdf.drawString(190, y, str(familia[5]))
-	    
+
 	    y = y - 15
 
 
@@ -466,7 +466,7 @@ class MyForm(QtGui.QMainWindow):
 	self.frm_concejo = concejoComunal()
 	self.frm_concejo.show()
 	self.frm_concejo.llenarCamposmodificarConsejo( gidconsejo, gidusuario)
-	return	
+	return
 
 
     def listadoFamilias(self):
@@ -862,7 +862,7 @@ class MyForm(QtGui.QMainWindow):
 		self.ui.lblNotificacionBienestar.setText("<b>Los datos fueron agregados exitosamente! :D</b>")
 		self.actualizarGrid()
 		self.funciones.generar_log(self, "Se registraron los servicios publicos de la familia =" + self.ui.txtCedulaJefe.text() )
-		
+
 	    except:
 		self.setCursor(QtGui.QCursor(QtCore.Qt.ArrowCursor))
 		QtGui.QMessageBox(QtGui.QMessageBox.Critical, "Error guardando servicios basicos", "Error Guardando los datos de los servicios basicos").exec_()
@@ -896,7 +896,7 @@ class MyForm(QtGui.QMainWindow):
 		self.ui.lblNotificacionBienestar.setVisible(True)
 		self.ui.lblNotificacionBienestar.setText("<b>Los datos de servicios basicos del jefe de familia "+str(self.ui.txtNombrejefe.text())+" "+ str(self.ui.txtApellidojefe.text()) +" fueron modificados exitosamente!</b>")
 		self.actualizarGrid()
-		self.funciones.generar_log(self, "Fueron registrados los servicios publicos de la familia =" + self.ui.txtCedulaJefe.text() )		
+		self.funciones.generar_log(self, "Fueron registrados los servicios publicos de la familia =" + self.ui.txtCedulaJefe.text() )
 	    except:
 		self.setCursor(QtGui.QCursor(QtCore.Qt.ArrowCursor))
 		QtGui.QMessageBox(QtGui.QMessageBox.Critical, "Error Modificando", "Ocurrio un error Modificando los datos de servicios basicos ").exec_()
@@ -979,7 +979,7 @@ class MyForm(QtGui.QMainWindow):
 	except:
             self.setCursor(QtGui.QCursor(QtCore.Qt.ArrowCursor))
             QtGui.QMessageBox(QtGui.QMessageBox.Critical, "Error guardando servicios basicos", "Error Guardando los datos de salud del grupo familiar").exec_()
-	    self.funciones.generar_log(self, "Ocurrio un error registrando la informacion de salud de la familia =" + self.ui.txtCedulaJefe.text() + sql )	    
+	    self.funciones.generar_log(self, "Ocurrio un error registrando la informacion de salud de la familia =" + self.ui.txtCedulaJefe.text() + sql )
             return
 
 
