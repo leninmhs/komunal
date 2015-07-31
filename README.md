@@ -15,6 +15,7 @@ Komunal esta escrito en Python, usando libreria grafica QT4 y base de datos SQLi
     $ python inicial.py
 
 Usuario: leninmhs 
+
 Clave:   123456
 
 ##Licencia
